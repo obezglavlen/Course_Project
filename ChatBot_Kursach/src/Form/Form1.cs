@@ -30,6 +30,7 @@ namespace ChatBot_Kursach
             string str = textBox1.Text;
             textBox2.Text = $"{Convert.ToString(Test.b)}" + $" + {str}"; // Конвертация Test.b в string и добавление к нему теста из поля ввода
 
+      //      textBox2.Text = (Test.b).ToString();
             //pictureBox1.Image = (Image)Resource1.ResourceManager.GetObject(yourClass.getNeedImage());
         }
 
