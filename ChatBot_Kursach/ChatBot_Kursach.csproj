@@ -52,6 +52,7 @@
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
     <Compile Include="src\Algorithm\Algorithm.cs" />
+    <Compile Include="src\Algorithm\MainClass.cs" />
     <Compile Include="src\Form\Form1.cs">
       <SubType>Form</SubType>
     </Compile>

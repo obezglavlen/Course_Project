@@ -18,7 +18,7 @@ namespace ChatBot_Kursach
         // Добавление екземпляра класса Algorithm
         //
         Algorithm Test = new Algorithm();
-
+        MainClass a = new MainClass();
         public Form1()
         {
             InitializeComponent();
@@ -26,11 +26,13 @@ namespace ChatBot_Kursach
         private void button1_Click_1(object sender, EventArgs e)
         {
 
-            Test.b = 331;
+         //   Test.b = 331;
+         //   string str = textBox1.Text;
+        //    textBox2.Text = $"{Convert.ToString(Test.b)}" + $" + {str}"; // Конвертация Test.b в string и добавление к нему теста из поля ввода
             string str = textBox1.Text;
-            textBox2.Text = $"{Convert.ToString(Test.b)}" + $" + {str}"; // Конвертация Test.b в string и добавление к нему теста из поля ввода
-
-      //      textBox2.Text = (Test.b).ToString();
+            str = a.GetText(str);
+            textBox2.Text = str;
+            //      textBox2.Text = (Test.b).ToString();
             //pictureBox1.Image = (Image)Resource1.ResourceManager.GetObject(yourClass.getNeedImage());
         }
 
