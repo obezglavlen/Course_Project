@@ -26,17 +26,21 @@ namespace ChatBot_Kursach
         private void button1_Click_1(object sender, EventArgs e)
         {
 
-            Test.b = 331;
+            Test.b = 300;
             string str = textBox1.Text;
             textBox2.Text = $"{Convert.ToString(Test.b)}" + $" + {str}"; // Конвертация Test.b в string и добавление к нему теста из поля ввода
-
-      //      textBox2.Text = (Test.b).ToString();
+            // Как дела привет
             //pictureBox1.Image = (Image)Resource1.ResourceManager.GetObject(yourClass.getNeedImage());
         }
 
         private void очиститьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //fileClass.erase();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
