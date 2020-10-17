@@ -18,12 +18,12 @@ namespace ChatBot_Kursach.Algorithms
 
             for (int i = 0; i < 9; i++)
             {
-                program[i] = (i + 1).ToString();
+                program[i] = $"{(i + 1)}";
                 // f >> programs[i];
             }
         }
 
-        public void init()
+        /*public void init()
         {
             program = new string[9];
 
@@ -32,49 +32,33 @@ namespace ChatBot_Kursach.Algorithms
                 program[i] = (i + 1).ToString();
 
             }
-        }
-        public string GetProgram(int b)
+        }*/
+
+        static public string Start()
         {
+            return
+                "Привіт, я — чат-бот помічник по справам академічної мобільності. Я допоможу тобі обрати відповідну програму.\n" +
+                "Спочатку, що ти хочешь введи відповідь, яка позначає те що ти хочешь.\n" +
+                "1 - дізнатися, що таке міжнародна академічна мобільність\n" +
+                "2 - пройти опитування, та отримати рекомендації щодо програми\n" +
+                "3 - переглянути всі програми академічної мобільності\n" +
+                "4 - переглянути обране\n\n";
+        }
+
+        public string GetProgram(string s)
+        {
+            int b;
+            try
+            {
+                b = Convert.ToInt32(s);
+            }
+            catch(Exception e)
+            {
+                return "Введите номер программы";
+            }
             if (b > 0 && b < 9)
-                return program[b];
+                return "Вы выбрали  программу " + program[b - 1];
             else return "Такой программы не существует";
         }
-        public string GetText(string s)
-        {
-            switch (s)
-            {
-                case "1":
-                    return "Вы выбрали  программу " + program[0];
-                    break;
-                case "2":
-                    return "Вы выбрали  программу " + program[1];
-                    break;
-                case "3":
-                    return "Вы выбрали  программу " + program[2];
-                    break;
-                case "4":
-                    return "Вы выбрали  программу " + program[3];
-                    break;
-                case "5":
-                    return "Вы выбрали  программу " + program[4];
-                    break;
-                case "6":
-                    return "Вы выбрали  программу " + program[5];
-                    break;
-
-                case "7":
-                    return "Вы выбрали  программу " + program[6];
-                    break;
-                case "8":
-                    return "Вы выбрали  программу " + program[7];
-                    break;
-
-            }
-
-            return "asd";
-        }
-
-
-
     }
 }

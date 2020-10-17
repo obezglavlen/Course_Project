@@ -15,30 +15,36 @@ namespace ChatBot_Kursach
     public partial class Form1 : Form
     {
         //
-        // Добавление екземпляра класса Algorithm
+        // Добавление екземпляра класса MainClass
         //
-        Algorithm Test = new Algorithm();
-        MainClass a = new MainClass();
+        MainClass algorithmClass = new MainClass();
+
         public Form1()
         {
             InitializeComponent();
         }
         private void button1_Click_1(object sender, EventArgs e)
         {
-
-         //   Test.b = 331;
-         //   string str = textBox1.Text;
-        //    textBox2.Text = $"{Convert.ToString(Test.b)}" + $" + {str}"; // Конвертация Test.b в string и добавление к нему теста из поля ввода
             string str = textBox1.Text;
-            str = a.GetText(str);
-            textBox2.Text = str;
-            //      textBox2.Text = (Test.b).ToString();
-            //pictureBox1.Image = (Image)Resource1.ResourceManager.GetObject(yourClass.getNeedImage());
+            if (str.Equals(""))
+            {
+                return;
+            }
+            label1.Text += " Ви: " + str + "\n\n";
+            str = "Бот: " + algorithmClass.GetProgram(str);
+            label1.Text += str + "\n\n";
+            textBox1.Text = "";
+            panel1.VerticalScroll.Value = panel1.VerticalScroll.Maximum;
         }
 
         private void очиститьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //fileClass.erase();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            label1.Text += MainClass.Start();
         }
     }
 }
