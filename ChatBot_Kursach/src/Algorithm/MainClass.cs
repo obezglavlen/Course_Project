@@ -6,6 +6,31 @@ using System.Threading.Tasks;
 
 namespace ChatBot_Kursach.Algorithms
 {
+
+    struct Question
+    {
+        public string text;
+        public string[] answer;
+        public int NextScreen;
+        public bool IsActive;
+
+
+        public Question(string t, string[] ans, int countOfAnswers, int next, bool act)
+        {
+            text = t;
+            answer = new string[countOfAnswers];
+            answer = ans;
+            NextScreen = next;
+            IsActive = act;
+        }
+
+    }
+    struct Screen
+    {
+
+        public Question a;
+
+    }
     public class MainClass
     {
         public string[] program;
