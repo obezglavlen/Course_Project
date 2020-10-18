@@ -83,7 +83,8 @@ namespace ChatBot_Kursach.Algorithms
             }
             if (b > 0 && b < 9)
                 return "Вы выбрали  программу " + program[b - 1];
-            else return "Такой программы не существует";
+            else if (b == 0) return Start();
+            else return "Такой программы не существует\n" + Start();
         }
     }
 }

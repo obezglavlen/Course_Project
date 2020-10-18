@@ -30,11 +30,8 @@ namespace ChatBot_Kursach
             {
                 return;
             }
-            label1.Text += " Ви: " + str + "\n\n";
-            str = "Бот: " + algorithmClass.GetProgram(str);
-            label1.Text += str + "\n\n";
+            label1.Text = algorithmClass.GetProgram(str);
             textBox1.Text = "";
-            panel1.VerticalScroll.Value = panel1.VerticalScroll.Maximum;
         }
 
         private void очиститьToolStripMenuItem_Click(object sender, EventArgs e)
