@@ -18,7 +18,6 @@ namespace ChatBot_Kursach
         // Добавление екземпляра класса MainClass
         //
         MainClass algorithmClass = new MainClass();
-
         public Form1()
         {
             InitializeComponent();
@@ -33,6 +32,12 @@ namespace ChatBot_Kursach
             label1.Text = algorithmClass.CheckKeyWord(str).GetText();
             textBox1.Text = "";
             //button2.Visible = algorithmClass.CheckButtonVisible(); // true or false
+            switch (algorithmClass.CheckKeyWord(str).GetImagePath())
+            {
+                case "robot": pictureBox1.Image = Properties.Resources.robot; break;
+                case "send": pictureBox1.Image = Properties.Resources.send; break;
+                case "heart": pictureBox1.Image = Properties.Resources.heart_PNG704; break;
+            }
         }
 
         private void очиститьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -42,7 +47,12 @@ namespace ChatBot_Kursach
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            label1.Text += MainClass.Start();
+            //    label1.Text += MainClass.Start();
+            label1.Text += algorithmClass.Start().GetText();
+
+            pictureBox1.Image = Properties.Resources.robot;
+
+            algorithmClass.Start().GetImagePath();
         }
     }
 }

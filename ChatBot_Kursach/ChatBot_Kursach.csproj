@@ -46,8 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\Algorithm\Algorithm.cs" />
+    <Compile Include="src\Algorithm\DynamicScreen.cs" />
     <Compile Include="src\Algorithm\MainClass.cs" />
+    <Compile Include="src\Algorithm\Question.cs" />
+    <Compile Include="src\Algorithm\Screen.cs" />
     <Compile Include="src\Form\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
