@@ -30,7 +30,8 @@ namespace ChatBot_Kursach
             {
                 return;
             }
-            label1.Text = algorithmClass.GetProgram(str);
+            // label1.Text = algorithmClass.GetProgram(str);
+            label1.Text = algorithmClass.CheckKeyWord(str).GetText();
             textBox1.Text = "";
         }
 
