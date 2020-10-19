@@ -30,9 +30,9 @@ namespace ChatBot_Kursach
             {
                 return;
             }
-            // label1.Text = algorithmClass.GetProgram(str);
             label1.Text = algorithmClass.CheckKeyWord(str).GetText();
             textBox1.Text = "";
+            //button2.Visible = algorithmClass.CheckButtonVisible(); // true or false
         }
 
         private void очиститьToolStripMenuItem_Click(object sender, EventArgs e)
