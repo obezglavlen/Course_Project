@@ -14,21 +14,6 @@ namespace ChatBot_Kursach.Algorithms
         protected string ImagePath;
         protected string MainText;
         protected string TextToReturn;
-<<<<<<< Updated upstream
-        protected Question[] question;
-        protected int count;
-        protected bool IsAllActive;
-
-        public Screen(string imgPath, string mainText, int countOfQuestions, Question[] Questions, bool AllActive)
-        {
-            ImagePath = imgPath;
-            MainText = mainText;
-            count = countOfQuestions;
-            question = new Question[countOfQuestions];
-
-            question = Questions;
-            IsAllActive = AllActive;
-=======
         protected Question[] questions;
 
         public Screen(string imgPath, string mainText, Question[] Questions)
@@ -37,7 +22,6 @@ namespace ChatBot_Kursach.Algorithms
             MainText = mainText;
             questions = Questions;
 
->>>>>>> Stashed changes
         }
 
         public Screen() { }
