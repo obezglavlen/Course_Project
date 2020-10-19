@@ -24,7 +24,7 @@ namespace ChatBot_Kursach
         }
         private void button1_Click_1(object sender, EventArgs e)
         {
-            string str = textBox1.Text;
+            string str = textBox1.Text.ToString();
             if (str.Equals(""))
             {
                 return;
@@ -32,7 +32,7 @@ namespace ChatBot_Kursach
             label1.Text = algorithmClass.CheckKeyWord(str).GetText();
             textBox1.Text = "";
             //button2.Visible = algorithmClass.CheckButtonVisible(); // true or false
-            switch (algorithmClass.CheckKeyWord(str).GetImagePath())
+            switch (algorithmClass.CheckKeyWord(str).imagePath)
             {
                 case "robot": pictureBox1.Image = Properties.Resources.robot; break;
                 case "send": pictureBox1.Image = Properties.Resources.send; break;
@@ -47,12 +47,8 @@ namespace ChatBot_Kursach
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //    label1.Text += MainClass.Start();
-            label1.Text += algorithmClass.Start().GetText();
-
+            label1.Text = algorithmClass.Start().GetText();
             pictureBox1.Image = Properties.Resources.robot;
-
-            algorithmClass.Start().GetImagePath();
         }
     }
 }
