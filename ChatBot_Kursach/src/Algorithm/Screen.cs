@@ -16,9 +16,8 @@ namespace ChatBot_Kursach.Algorithms
         protected string TextToReturn;
         protected Question[] question;
         protected int count;
-        protected bool IsAllActive;
 
-        public Screen(string imgPath, string mainText, int countOfQuestions, Question[] Questions, bool AllActive)
+        public Screen(string imgPath, string mainText, int countOfQuestions, Question[] Questions)
         {
             ImagePath = imgPath;
             MainText = mainText;
@@ -26,7 +25,7 @@ namespace ChatBot_Kursach.Algorithms
             question = new Question[countOfQuestions];
 
             question = Questions;
-            IsAllActive = AllActive;
+
         }
 
         public Screen() { }

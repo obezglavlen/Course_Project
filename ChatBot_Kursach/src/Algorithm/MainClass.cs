@@ -17,22 +17,17 @@ namespace ChatBot_Kursach.Algorithms
         string[] ans2;
         string[] ans3;
         string[] ans4;
-        Screen current;
+     //   Screen current;
         Screen[] screens;
         Screen mistake;
         int Current;
-        Screen ds;
+
         public MainClass()
         {
             screens = new Screen[40];
             Current = 0;
-            ans = new string[2];
-            ans[0] = "1";
-            ans[1] = "2";
-            s = new Question("ASD", ans, 2, 1);
-            q = new Question[2];
-            q[0] = s;
-            q[1] = s;
+            
+            ///////////////////////////////
             ch = new Question[4];
             ans = new string[1];
             ans2 = new string[1];
@@ -47,16 +42,17 @@ namespace ChatBot_Kursach.Algorithms
             ans4[0] = "4";
             ch[3] = new Question("4. переглянути обране\n", ans4, 1, 4);
             //public Question(string t, string[] ans, int countOfAnswers, int next)
-            current = new Screen("txt.txt", "Maintext", 2, q, true);
-               mistake = new Screen("txt.txt", "Mistake", 2, q, true);
+          //  current = new Screen("txt.txt", "Maintext", 2, q, true);
+               mistake = new Screen("txt.txt", "Mistake", 2, q);
             screens[0] = new Screen("robot", "Привіт, я — чат-бот помічник по справам академічної мобільності. Я допоможу тобі обрати відповідну програму.\n" +
-                "Спочатку, що ти хочешь введи відповідь, яка позначає те що ти хочешь.\n", 4, ch, true);
+                "Спочатку, що ти хочешь введи відповідь, яка позначає те що ти хочешь.\n", 4, ch);
             //public Screen(string imgPath, string mainText, int countOfQuestions, Question []Questions, bool AllActive )
-            screens[1] = new DynamicScreen("send", "Screen 1", 2, q, true);
-            screens[2] = new DynamicScreen("heart", "Screen 2", 2, q, true);
-            screens[3] = new DynamicScreen("robot", "Screen 3", 2, q, true);
-            screens[4] = new DynamicScreen("heart", "Screen 4", 2, q, true);
+            screens[1] = new DynamicScreen("send", "Screen 1", 2, q);
+            screens[2] = new DynamicScreen("heart", "Screen 2", 2, q);
+            screens[3] = new DynamicScreen("robot", "Screen 3", 2, q);
+            screens[4] = new DynamicScreen("heart", "Screen 4", 2, q);
             //  ((DynamicScreen)screens[2]).SetQuestionActive(1);
+            ///////////////////////////////////////////////
 
         }
 
