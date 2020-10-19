@@ -14,33 +14,26 @@ namespace ChatBot_Kursach.Algorithms
         protected string ImagePath;
         protected string MainText;
         protected string TextToReturn;
-        protected Question[] question;
-        protected int count;
+        protected Question[] questions;
 
-        public Screen(string imgPath, string mainText, int countOfQuestions, Question[] Questions)
+        public Screen(string imgPath, string mainText, Question[] Questions)
         {
             ImagePath = imgPath;
             MainText = mainText;
-            count = countOfQuestions;
-            question = new Question[countOfQuestions];
-
-            question = Questions;
+            questions = Questions;
 
         }
 
         public Screen() { }
 
-        public string GetImagePath() { return ImagePath; }
+        public string imagePath { get { return ImagePath; } }
 
         public int CheckKeyword(string keyword)
         {
-
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < questions.Length; i++)
             {
-                if (question[i].CheckKeyword(keyword))
-                {
-                    return question[i].NextScreen;
-                }
+                if (questions[i].CheckKeyword(keyword) == true)
+                    return questions[i].NextScreen;
             }
             return -1;
 
@@ -48,7 +41,7 @@ namespace ChatBot_Kursach.Algorithms
         public virtual string GetText()
         {
             TextToReturn = MainText + "\n";
-            for (int i = 0; i < count; i++) TextToReturn += "\n" + question[i].text;
+            for (int i = 0; i < questions.Length; i++) TextToReturn += "\n" + questions[i].text;
             return TextToReturn;
         }
 
