@@ -8,5 +8,6 @@ namespace ChatBot_Kursach.WorkWithFiles
 {
     class XMLFile
     {
+		
     }
 }
