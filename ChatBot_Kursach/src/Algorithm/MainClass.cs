@@ -30,10 +30,10 @@ namespace ChatBot_Kursach.Algorithms
             mistake = new Screen("robot", "Mistake", new Question[] { new Question("0. Повернення до головного меню", new string[] { "0" }, 0) });
             screens[0] = new Screen("robot", "Привіт, я — чат-бот помічник по справам академічної мобільності. Я допоможу тобі обрати відповідну програму.\n" +
                 "Спочатку, що ти хочешь введи відповідь, яка позначає те що ти хочешь.\n", testQuestionList);
-            screens[1] = new DynamicScreen("send", "Screen 1", new Question[] { new Question ("0. Повернення до головного меню", new string[] { "0" }, 0) });
-            screens[2] = new DynamicScreen("heart", "Screen 2", new Question[] { new Question("0. Повернення до головного меню", new string[] { "0" }, 0) });
-            screens[3] = new DynamicScreen("robot", "Screen 3", new Question[] { new Question("0. Повернення до головного меню", new string[] { "0" }, 0) });
-            screens[4] = new DynamicScreen("heart", "Screen 4", new Question[] { new Question("0. Повернення до головного меню", new string[] { "0" }, 0) });
+            screens[1] = new Screen("send", "Screen 1\n", new Question[] { new Question ("0. Повернення до головного меню", new string[] { "0" }, 0) });
+            screens[2] = new DynamicScreen("heart", "Screen 2\n", new Question[] { new Question("0. Повернення до головного меню", new string[] { "0" }, 0) });
+            screens[3] = new Screen("robot", "Screen 3\n", new Question[] { new Question("0. Повернення до головного меню", new string[] { "0" }, 0) });
+            screens[4] = new Screen("heart", "Screen 4\n", new Question[] { new Question("0. Повернення до головного меню", new string[] { "0" }, 0) });
             //  ((DynamicScreen)screens[2]).SetQuestionActive(1);
             ///////////////////////////////////////////////
 
@@ -48,15 +48,14 @@ namespace ChatBot_Kursach.Algorithms
 
         public Screen CheckKeyWord(string keyword)
         {
-            if (Current >= 0)
+            Current = screens[trueCurrent].CheckKeyword(keyword);
+            if (Current >= 0) trueCurrent = Current;
+            else
             {
-                Current = screens[Current].CheckKeyword(keyword);
-                trueCurrent = Current;
+                if (keyword == "0" || keyword == "головна") { trueCurrent = 0; return screens[0]; }
+                return mistake;
             }
-            else Current = trueCurrent; 
-            if (Current != -1) return screens[Current];
-            else if (keyword == "0" || keyword == "головна") { Current = 0; return screens[0]; }
-            return mistake; // Тут надо try catch
+            return screens[trueCurrent];
         }
 
         public void SetFavActive(int i)
