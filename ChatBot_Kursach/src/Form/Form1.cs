@@ -18,7 +18,7 @@ namespace ChatBot_Kursach
         // Добавление екземпляра класса MainClass
         //
         MainClass algorithmClass = new MainClass();
-        Algorithms.Screen tmp = new Algorithms.Screen();
+
         public Form1()
         {
             InitializeComponent();
@@ -30,16 +30,16 @@ namespace ChatBot_Kursach
             {
                 return;
             }
-            tmp = algorithmClass.CheckKeyWord(str);
-            label1.Text += tmp.GetText();
+            algorithmClass.CheckKeyWord(str);
+            label1.Text = algorithmClass.GetText();
             textBox1.Text = "";
-            switch (tmp.imagePath)
+            //button2.Visible = algorithmClass.CheckButtonVisible(); // true or false
+            switch (algorithmClass.ImagePath)
             {
                 case "robot": pictureBox1.Image = Properties.Resources.robot; break;
                 case "send": pictureBox1.Image = Properties.Resources.send; break;
                 case "heart": pictureBox1.Image = Properties.Resources.heart_PNG704; break;
             }
-            panel1.VerticalScroll.Value = panel1.VerticalScroll.Maximum;
         }
 
         private void очиститьToolStripMenuItem_Click(object sender, EventArgs e)
