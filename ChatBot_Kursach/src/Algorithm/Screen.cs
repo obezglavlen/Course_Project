@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChatBot_Kursach.Algorithms
 {
-
+    //Ya ibu sobak
 
     //screeeen
     public class Screen
