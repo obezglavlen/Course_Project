@@ -18,6 +18,7 @@ namespace ChatBot_Kursach
         // Добавление екземпляра класса MainClass
         //
         MainClass algorithmClass = new MainClass();
+
         public Form1()
         {
             InitializeComponent();
@@ -29,10 +30,11 @@ namespace ChatBot_Kursach
             {
                 return;
             }
-            label1.Text = algorithmClass.CheckKeyWord(str).GetText();
+            algorithmClass.CheckKeyWord(str);
+            label1.Text = algorithmClass.GetText();
             textBox1.Text = "";
             //button2.Visible = algorithmClass.CheckButtonVisible(); // true or false
-            switch (algorithmClass.CheckKeyWord(str).imagePath)
+            switch (algorithmClass.ImagePath)
             {
                 case "robot": pictureBox1.Image = Properties.Resources.robot; break;
                 case "send": pictureBox1.Image = Properties.Resources.send; break;
