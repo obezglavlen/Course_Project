@@ -37,9 +37,9 @@ namespace ChatBot_Kursach.Algorithms
         }
         public virtual string GetText()
         {
-            TextToReturn = MainText + "\n";
-            for (int i = 0; i < questions.Length; i++) TextToReturn += "\n" + questions[i].text;
-            return TextToReturn;
+            TextToReturn = "Бот: \n" + MainText + '\n';
+            for (int i = 0; i < questions.Length; i++) TextToReturn += questions[i].text + '\n';
+            return TextToReturn + "———————————————————————————————————————————\n";
         }
 
     }
