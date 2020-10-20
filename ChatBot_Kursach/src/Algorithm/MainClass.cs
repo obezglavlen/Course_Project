@@ -20,6 +20,24 @@ namespace ChatBot_Kursach.Algorithms
             screens = new Screen[40];
             Current = trueCurrent = 0;
 
+            /*string img, txt;
+            string[] kv;//keyword
+            string vopros;
+            Question[] qqq = new Question[xml[i].countQuestions];
+            for(int i = 0; i < 40; i++)
+            {
+                img = xml[i].img;
+                txt = xml[i].txt;
+                vopros = xml[i].vopros;
+                kv = new string[xml[i].countofkv];
+                for(int j=0;j<xml[i].countofkv;j++) kv[j]= xml[i].stringN;
+
+                for(int j=0;i<xml[i].countQuestions;j++)
+                qqq[i] = new Question(vopros,kv,xml[i].next);
+                screens[i] = new Screen(img, txt, qqq);
+            }*/
+
+
 
             ///////////////////////////////
             testQuestionList = new Question[4];
