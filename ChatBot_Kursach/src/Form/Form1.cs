@@ -33,7 +33,7 @@ namespace ChatBot_Kursach
             tmp = algorithmClass.CheckKeyWord(str);
             label1.Text += tmp.GetText();
             textBox1.Text = "";
-            switch (tmp.imagePath)
+            switch (tmp.imagePathавыаы)
             {
                 case "robot": pictureBox1.Image = Properties.Resources.robot; break;
                 case "send": pictureBox1.Image = Properties.Resources.send; break;
