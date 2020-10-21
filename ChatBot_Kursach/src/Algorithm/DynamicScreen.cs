@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 
 namespace ChatBot_Kursach.Algorithms
 {
-
     public class DynamicScreen : Screen
     {
         protected bool[] IsQuestionActive;
@@ -16,24 +11,22 @@ namespace ChatBot_Kursach.Algorithms
             ImagePath = imgPath;
             MainText = mainText;
             questions = Questions;
-            IsQuestionActive = Enumerable.Repeat(false, questions.Length).ToArray();           
+            IsQuestionActive = Enumerable.Repeat(false, questions.Length).ToArray();
         }
 
         public DynamicScreen() : base()
         {
-
         }
 
         public bool GetQuestionActive(int q)
         {
-
             return IsQuestionActive[q];
         }
+
         public bool SetQuestionActive(int q)
         {
             IsQuestionActive[q] = !IsQuestionActive[q];
             return IsQuestionActive[q];
-
         }
 
         public override string GetText()

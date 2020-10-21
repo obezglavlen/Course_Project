@@ -1,20 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ChatBot_Kursach.Algorithms
 {
-
     public class MainClass
     {
-        Question[] testQuestionList;
-     //   Screen current;
-        Screen[] screens;
-        Screen mistake;
-        int Current, trueCurrent;
-        bool m=false;
+        private Question[] testQuestionList;
+
+        //   Screen current;
+        private Screen[] screens;
+
+        private Screen mistake;
+        private int Current, trueCurrent;
+        private bool m = false;
+
         public MainClass()
         {
             screens = new Screen[40];
@@ -37,8 +35,6 @@ namespace ChatBot_Kursach.Algorithms
                 screens[i] = new Screen(img, txt, qqq);
             }*/
 
-
-
             ///////////////////////////////
             testQuestionList = new Question[4];
             testQuestionList[0] = new Question("1. дізнатися, що таке міжнародна академічна мобільність\n", new string[] { "1", "академічна", "мобільність" }, 1);
@@ -48,16 +44,13 @@ namespace ChatBot_Kursach.Algorithms
             mistake = new Screen("robot", "Усе погано", new Question[] { new Question("0. Повернення до головного меню", new string[] { "0" }, 0) });
             screens[0] = new Screen("robot", "Привіт, я — чат-бот помічник по справам академічної мобільності. Я допоможу тобі обрати відповідну програму.\n" +
                 "Спочатку, що ти хочешь введи відповідь, яка позначає те що ти хочешь.\n", testQuestionList);
-            screens[1] = new Screen("send", "Screen 1", new Question[] { new Question ("0. Повернення до головного меню", new string[] { "0" }, 0) });
+            screens[1] = new Screen("send", "Screen 1", new Question[] { new Question("0. Повернення до головного меню", new string[] { "0" }, 0) });
             screens[2] = new DynamicScreen("heart", "Screen 2", new Question[] { new Question("0. Повернення до головного меню", new string[] { "0" }, 0) });
             screens[3] = new Screen("robot", "Screen 3", new Question[] { new Question("0. Повернення до головного меню", new string[] { "0" }, 0) });
             screens[4] = new Screen("heart", "Screen 4", new Question[] { new Question("0. Повернення до головного меню", new string[] { "0" }, 0) });
             //  ((DynamicScreen)screens[2]).SetQuestionActive(1);
             ///////////////////////////////////////////////
-
         }
-
-
 
         public Screen Start()
         {
@@ -69,10 +62,11 @@ namespace ChatBot_Kursach.Algorithms
             if (m) return screens[trueCurrent].GetText() + "\n\nПомилка розпізнавання ключового слова";
             return screens[trueCurrent].GetText();
         }
+
         public String ImagePath { get { return screens[trueCurrent].imagePath; } }
+
         public Screen CheckKeyWord(string keyword)
         {
-
             Current = screens[trueCurrent].CheckKeyword(keyword);
             if (Current >= 0) trueCurrent = Current;
             else
@@ -82,12 +76,12 @@ namespace ChatBot_Kursach.Algorithms
                 return mistake;
             }
             m = false;
-             return screens[trueCurrent];
+            return screens[trueCurrent];
             // Тут надо try catch
             /* Current = screens[trueCurrent].CheckKeyword(keyword);
              if(Current>=0) trueCurrent = Current;
 
-        // else Current = trueCurrent; 
+        // else Current = trueCurrent;
          if (trueCurrent != -1) return screens[trueCurrent];
          else if (keyword == "0" || keyword == "головна") { trueCurrent = 0; return screens[0]; }
          return mistake; // Тут надо try catch*/
@@ -95,8 +89,7 @@ namespace ChatBot_Kursach.Algorithms
 
         public void SetFavActive(int i)
         {
-   //         ((DynamicScreen)screens[2]).SetQuestionActive(i);
+            //         ((DynamicScreen)screens[2]).SetQuestionActive(i);
         }
-
     }
 }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ChatBot_Kursach.Algorithms
+﻿namespace ChatBot_Kursach.Algorithms
 {
     public class Screen
     {
@@ -18,10 +12,11 @@ namespace ChatBot_Kursach.Algorithms
             ImagePath = imgPath;
             MainText = mainText;
             questions = Questions;
-
         }
 
-        public Screen() { }
+        public Screen()
+        {
+        }
 
         public string imagePath { get { return ImagePath; } }
 
@@ -33,14 +28,13 @@ namespace ChatBot_Kursach.Algorithms
                     return questions[i].NextScreen;
             }
             return -1;
-
         }
+
         public virtual string GetText()
         {
             TextToReturn = "Бот: \n" + MainText + '\n';
             for (int i = 0; i < questions.Length; i++) TextToReturn += questions[i].text + '\n';
             return TextToReturn + "———————————————————————————————————————————\n";
         }
-
     }
 }

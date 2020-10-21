@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ChatBot_Kursach.WorkWithFiles
+﻿namespace ChatBot_Kursach.WorkWithFiles
 {
-    class XMLFile
+    internal class XMLFile
     {
-
-
-		
     }
 }

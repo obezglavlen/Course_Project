@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace ChatBot_Kursach.Algorithms
+﻿namespace ChatBot_Kursach.Algorithms
 {
-
     public struct Question
     {
         public string text;
@@ -29,6 +21,5 @@ namespace ChatBot_Kursach.Algorithms
             }
             return false;
         }
-
     }
 }
