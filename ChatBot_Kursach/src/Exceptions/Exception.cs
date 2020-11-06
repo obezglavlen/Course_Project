@@ -1,6 +1,12 @@
-﻿namespace ChatBot_Kursach.Exceptions
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ChatBot_Kursach.Exceptions
 {
-    internal class Exception
+    class Exception
     {
     }
 }
