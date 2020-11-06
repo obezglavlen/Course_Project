@@ -11,16 +11,30 @@ namespace ChatBot_Kursach.Algorithms
     {
         protected bool[] IsQuestionActive;
 
-        public DynamicScreen(string imgPath, string mainText, Question[] Questions) : base()
+        public DynamicScreen(string imgPath, string mainText, Question[] Questions, bool ButonVisible) : base()
         {
             ImagePath = imgPath;
             MainText = mainText;
             questions = Questions;
-            IsQuestionActive = Enumerable.Repeat(false, questions.Length).ToArray();           
+            IsQuestionActive = Enumerable.Repeat(false, 10).ToArray();
+
+            ButtonVisible = ButonVisible;
         }
 
         public DynamicScreen() : base()
         {
+
+        }
+
+        public override int CheckKeyword(string keyword)
+        {
+            for (int i = 0; i < questions.Length; i++)
+            {
+                if(IsQuestionActive[i])
+                if (questions[i].CheckKeyword(keyword) == true)
+                    return questions[i].NextScreen;
+            }
+            return -1;
 
         }
 

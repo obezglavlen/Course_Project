@@ -38,8 +38,11 @@ namespace ChatBot_Kursach
             {
                 case "robot": pictureBox1.Image = Properties.Resources.robot; break;
                 case "send": pictureBox1.Image = Properties.Resources.send; break;
-                case "heart": pictureBox1.Image = Properties.Resources.heart_PNG704; break;
+                case "heart": pictureBox1.Image = Properties.Resources.heart_disabled; break;
             }
+            button2.Visible = algorithmClass.IsButtonVisible;
+            if (button2.Visible) if (algorithmClass.IsButtonLiked) button2.Image = Properties.Resources.heart_enabled;
+                else button2.Image = Properties.Resources.heart_disabled;
         }
 
         private void очиститьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -51,6 +54,14 @@ namespace ChatBot_Kursach
         {
             label1.Text = algorithmClass.Start().GetText();
             pictureBox1.Image = Properties.Resources.robot;
+            button2.Visible = false;
+        }
+
+        private void HeartClick(object sender, EventArgs e)
+        {
+            algorithmClass.SetFavActive();
+            if(algorithmClass.IsButtonLiked) button2.Image= Properties.Resources.heart_enabled;
+            else button2.Image= Properties.Resources.heart_disabled;
         }
     }
 }

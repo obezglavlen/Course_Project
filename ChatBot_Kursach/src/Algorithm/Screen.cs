@@ -12,20 +12,21 @@ namespace ChatBot_Kursach.Algorithms
         protected string MainText;
         protected string TextToReturn;
         protected Question[] questions;
-
-        public Screen(string imgPath, string mainText, Question[] Questions)
+        protected bool ButtonVisible;
+        public Screen(string imgPath, string mainText, Question[] Questions, bool ButonVisible)
         {
             ImagePath = imgPath;
             MainText = mainText;
             questions = Questions;
-
+            ButtonVisible = ButonVisible;
         }
 
         public Screen() { }
 
         public string imagePath { get { return ImagePath; } }
 
-        public int CheckKeyword(string keyword)
+        public bool Buttonvisible { get { return ButtonVisible; } }
+        public virtual int CheckKeyword(string keyword)
         {
             for (int i = 0; i < questions.Length; i++)
             {
@@ -43,4 +44,16 @@ namespace ChatBot_Kursach.Algorithms
         }
 
     }
+
+
+    public class QScreen : Screen
+    {
+
+    }
+
+
+
 }
+
+
+
