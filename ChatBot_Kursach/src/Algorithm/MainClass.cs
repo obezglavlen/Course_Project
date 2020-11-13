@@ -53,14 +53,14 @@ namespace ChatBot_Kursach.Algorithms
             ///////////////////////////////
             testQuestionList = new Question[4];
             testQuestionList[0] = new Question("1. дізнатися, що таке міжнародна академічна мобільність\n", new  Regex("1|академічн|мобільн"), 1);
-            testQuestionList[3] = new Question("4. пройти опитування, та отримати рекомендації щодо програми\n", new  Regex("4|опитуван|прой|рекомендац"), 4);
-            testQuestionList[2] = new Question("3. переглянути всі програми академічної мобільності\n", new  Regex("3|всі|програм"), 3);
             testQuestionList[1] = new Question("2. переглянути обране\n", new Regex("2|обран"), 2);
+            testQuestionList[2] = new Question("3. переглянути всі програми академічної мобільності\n", new Regex("3|всі|програм"), 3);
+            testQuestionList[3] = new Question("4. пройти опитування, та отримати рекомендації щодо програми\n", new  Regex("4|опитуван|прой|рекомендац"), 4);
             mistake = new Screen("robot", "Усе погано", new Question[] { new Question("0. Повернення до головного меню", new Regex("0"), 0) },false);
             screens[0] = new Screen("robot", "Привіт, я — чат-бот помічник по справам академічної мобільності. Я допоможу тобі обрати відповідну програму.\n" +
                 "Спочатку, що ти хочешь введи відповідь, яка позначає те що ти хочешь.\n", testQuestionList, false);
-            screens[1] = new Screen("send", "Screen 1", new Question[] { new Question ("0. Повернення до головного меню", new Regex("0"), 0) },true);
-            screens[2] = new DynamicScreen("heart", "Screen 2\nСписок обраних програм:", new Question[] { new Question("0. Повернення до головного меню", new Regex("0"), 0) },false);
+            screens[1] = new Screen("madrid", "Screen 1", new Question[] { new Question ("0. Повернення до головного меню", new Regex("0"), 0) },true);
+            screens[2] = new DynamicScreen("heart", "Screen 2\nСписок обраних програм:\n", new Question[] { new Question("0. Повернення до головного меню", new Regex("0"), 0) },false);
             screens[3] = new Screen("robot", "Screen 3", new Question[] { new Question("0. Повернення до головного меню", new Regex("0"), 0) },true);
             screens[4] = new Screen("heart", "Screen 4\nВи студент чи викладач?", new Question[] { new Question("1.Студент ", new Regex("1|студент"), -2),
                 new Question("2.Викладач ",  new Regex("2|викладач"), -3),
@@ -69,7 +69,8 @@ namespace ChatBot_Kursach.Algorithms
                 new Question("2.B2", new Regex("2|b2|в2|друге"), -5),
             new Question("3. С1 або вище", new Regex("3|c1|с1|третє"), -6),
             new Question("4. Повернення до головного меню/нижче за В1", new Regex("0|4|меню|головне|нижче в1|нижче b1|четверте"), 0)}, true);
-            screens[6] = new OpScreen("robot", "Screen 6", new Question[] { new Question("0. Повернення до головного меню", new Regex("0"), 0),
+            screens[6] = new OpScreen("robot", "Screen 6", new Question[] { 
+            new Question("0. Повернення до головного меню", new Regex("0"), 0),
             new Question("1. льовен", new Regex("1|льовен"), 0),
             new Question("2. Ільмен", new Regex("2|ільмен"), 0),
             new Question("3. Дортмунд", new Regex("3|дортмунд"), 0),

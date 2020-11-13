@@ -17,6 +17,7 @@ namespace ChatBot_Kursach.Algorithms
             MainText = mainText;
             questions = Questions;
             IsQuestionActive = Enumerable.Repeat(false, 10).ToArray();
+            IsQuestionActive[0] = true;
 
             ButtonVisible = ButonVisible;
         }
@@ -75,8 +76,8 @@ namespace ChatBot_Kursach.Algorithms
 
         public bool Set(short English,bool IsStudent)
         {
-            IsQuestionActive = Enumerable.Repeat(false, questions.Length).ToArray();
-            IsQuestionActive[0] = true;
+            //isquestionactive = enumerable.repeat(false, questions.length).toarray();
+            //isquestionactive[0] = true;
             //1:льовен, 2: Ыльмен, 3: Дортмунд, 4:Брашов, 5: Каринтій, 6: Мадрид, 7:Бельгія, 8:Антверпень, 9:
             if (IsStudent)
             {

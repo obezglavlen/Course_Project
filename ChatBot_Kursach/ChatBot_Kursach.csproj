@@ -102,5 +102,29 @@
   <ItemGroup>
     <None Include="Resources\heart_enabled.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KULeuven.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Artests_Plantijn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dortmund.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ilmenau.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Karint_Univ.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Madrid_Politech.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Thomas_More.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Transilvania.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
