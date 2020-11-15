@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ChatBot_Kursach.MainForm;
 
 namespace ChatBot_Kursach
 {
@@ -16,7 +17,7 @@ namespace ChatBot_Kursach
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new ChatBot());
         }
     }
 }

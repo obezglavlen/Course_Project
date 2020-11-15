@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ChatBot_Kursach.Algorithms;
 
-namespace ChatBot_Kursach
+namespace ChatBot_Kursach.MainForm
 {
-    public partial class Form1 : Form
+    public partial class ChatBot : Form
     {
         //
         // Добавление екземпляра класса MainClass
         //
         MainClass algorithmClass = new MainClass();
 
-        public Form1()
+        public ChatBot()
         {
             InitializeComponent();
         }
@@ -73,6 +73,12 @@ namespace ChatBot_Kursach
             algorithmClass.SetFavActive();
             if(algorithmClass.IsButtonLiked) button2.Image= Properties.Resources.heart_enabled;
             else button2.Image= Properties.Resources.heart_disabled;
+        }
+
+        private void проДодатокToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+            about.ShowDialog();
         }
     }
 }
