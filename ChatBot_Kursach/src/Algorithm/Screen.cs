@@ -8,22 +8,27 @@ namespace ChatBot_Kursach.Algorithms
 {
     public class Screen
     {
-        protected string ImagePath;
+        protected int ImagePath;
         protected string MainText;
         protected string TextToReturn;
         protected Question[] questions;
         protected bool ButtonVisible;
-        public Screen(string imgPath, string mainText, Question[] Questions, bool ButonVisible)
+        public Screen(int imgPath, string mainText, Question[] Questions, bool ButtonVisible)
         {
             ImagePath = imgPath;
             MainText = mainText;
             questions = Questions;
-            ButtonVisible = ButonVisible;
+            this.ButtonVisible = ButtonVisible;
         }
 
-        public Screen() { }
+        public Screen()
+        {
+            ImagePath = (int)Constants.Images.ROBOT;
+            MainText = "";
+            ButtonVisible = false;
+        }
 
-        public string imagePath { get { return ImagePath; } }
+        public int imagePath { get { return ImagePath; } }
 
         public bool Buttonvisible { get { return ButtonVisible; } }
         public virtual int CheckKeyword(string keyword)
@@ -36,11 +41,14 @@ namespace ChatBot_Kursach.Algorithms
             return -1;
 
         }
-        public virtual string GetText()
+        public virtual string Text
         {
-            TextToReturn = "Бот: \n" + MainText + '\n';
-            for (int i = 0; i < questions.Length; i++) TextToReturn += questions[i].text + '\n';
-            return TextToReturn;
+            get
+            {
+                TextToReturn = "Бот: \n" + MainText + '\n';
+                for (int i = 0; i < questions.Length; i++) TextToReturn += questions[i].text + '\n';
+                return TextToReturn;
+            }
         }
 
     }
