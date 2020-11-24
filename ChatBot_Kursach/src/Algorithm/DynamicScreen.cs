@@ -53,6 +53,7 @@ namespace ChatBot_Kursach.Algorithms
         public void ClearQuestionActive()
         {
             IsQuestionActive = Enumerable.Repeat(false, 10).ToArray();
+            IsQuestionActive[0] = true;
         }
         public override string Text
         {
