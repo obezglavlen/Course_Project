@@ -63,7 +63,15 @@ namespace ChatBot_Kursach.Algorithms
                 new Question ("0. Повернення до головного меню", Constants.toMainRegex, 0)
             },true);
             screens[2] = new DynamicScreen((int)Constants.Images.HEART, "Screen 2\nСписок обраних програм:\n", new Question[] {
-                new Question("0. Повернення до головного меню", Constants.toMainRegex, 0)
+                                new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
+                new Question("1. Льовен", new Regex("1|льовен"), 10),
+                new Question("2. Ільменау", new Regex("2|ільменау"), 11),
+                new Question("3. Дортмунд", new Regex("3|дортмунд"), 12),
+                new Question("4. Трансильванiя", new Regex("4|трансильванiя"), 13),
+                new Question("5. Каринтій ", new Regex("5|каринтій"), 14),
+                new Question("6. Мадрид", new Regex("6|мадрид"), 15),
+                new Question("7. Thomas More", new Regex("7|томас|thomas|more"), 16),
+                new Question("8. Артесiс ", new Regex("8|артесiс"), 17)
             },false);
             screens[3] = new Screen((int)Constants.Images.ROBOT, "Screen 3", new Question[] {
                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
@@ -220,14 +228,14 @@ namespace ChatBot_Kursach.Algorithms
 
         public void SetFavActive()
         {
-            ((DynamicScreen)screens[2]).SetQuestionActive(trueCurrent - 10);
+            ((DynamicScreen)screens[2]).SetQuestionActive(trueCurrent - 9);
         }
 
         public void ClearFav()
         {
             ((DynamicScreen)screens[2]).ClearQuestionActive();
         }
-        public bool IsButtonLiked { get { return ((DynamicScreen)screens[2]).GetQuestionActive(trueCurrent - 10); } }
+        public bool IsButtonLiked { get { return ((DynamicScreen)screens[2]).GetQuestionActive(trueCurrent - 9); } }
 
     }
 }
