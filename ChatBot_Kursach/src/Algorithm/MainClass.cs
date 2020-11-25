@@ -57,12 +57,12 @@ namespace ChatBot_Kursach.Algorithms
             InitQuestionList[2] = new Question("3. переглянути всі програми академічної мобільності\n", new Regex("3|всі|програм"), 3);
             InitQuestionList[3] = new Question("4. пройти опитування, та отримати рекомендації щодо програми\n", new  Regex("4|опитуван|прой|рекомендац"), 4);
 
-            screens[0] = new Screen((int)Constants.Images.ROBOT, "Привіт, я — чат-бот помічник по справам академічної мобільності. Я допоможу тобі обрати відповідну програму.\n" +
+            screens[0] = new Screen((int)Constants.Images.NULL, "Привіт, я — чат-бот помічник по справам академічної мобільності. Я допоможу тобі обрати відповідну програму.\n" +
                 "Спочатку, що ти хочешь введи відповідь, яка позначає те що ти хочешь.\n", InitQuestionList, false);
-            screens[1] = new Screen((int)Constants.Images.MADRID, "Screen 1", new Question[] {
+            screens[1] = new Screen((int)Constants.Images.MADRID, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n", new Question[] {
                 new Question ("0. Повернення до головного меню", Constants.toMainRegex, 0)
             },true);
-            screens[2] = new DynamicScreen((int)Constants.Images.HEART, "Screen 2\nСписок обраних програм:\n", new Question[] {
+            screens[2] = new DynamicScreen((int)Constants.Images.NULL, "Список обраних програм:\n", new Question[] {
                                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
                 new Question("1. Льовен", new Regex("1|льовен"), 10),
                 new Question("2. Ільменау", new Regex("2|ільменау"), 11),
@@ -73,7 +73,7 @@ namespace ChatBot_Kursach.Algorithms
                 new Question("7. Thomas More", new Regex("7|томас|thomas|more"), 16),
                 new Question("8. Артесiс ", new Regex("8|артесiс"), 17)
             },false);
-            screens[3] = new Screen((int)Constants.Images.ROBOT, "Screen 3", new Question[] {
+            screens[3] = new Screen((int)Constants.Images.NULL, "Ось всi доступнi програми академiчної мобiльностi:\n", new Question[] {
                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
                 new Question("1. Льовен", new Regex("1|льовен"), 10),
                 new Question("2. Ільменау", new Regex("2|ільменау"), 11),
@@ -84,18 +84,19 @@ namespace ChatBot_Kursach.Algorithms
                 new Question("7. Thomas More", new Regex("7|томас|thomas|more"), 16),
                 new Question("8. Артесiс ", new Regex("8|артесiс"), 17)
             },false);
-            screens[4] = new Screen((int)Constants.Images.ROBOT, "Screen 4\nВи студент чи викладач?", new Question[] {
+            screens[4] = new Screen((int)Constants.Images.NULL, "Ви студент чи викладач?", new Question[] {
                 new Question("1.Студент ", new Regex("1|студент"), -2),
                 new Question("2.Викладач ",  new Regex("2|викладач"), -3),
-                new Question("0. Повернення до головного меню/ні те, ні інше", new Regex("2|ні|майже"), 0)
+                new Question("0. Повернення до головного меню/ні те, ні інше", Constants.toMainRegex, 0)
             },true);
-            screens[5] = new Screen((int)Constants.Images.ROBOT, "Screen 5\nЯкий у вас рівень володіння англйською мовою?", new Question[] {
+            screens[5] = new Screen((int)Constants.Images.NULL, "Який у вас рівень володіння англйською мовою?", new Question[] {
                 new Question("1.В1", new Regex("b1|в1|1|перше"), -4),
                 new Question("2.B2", new Regex("2|b2|в2|друге"), -5),
                 new Question("3. С1 або вище", new Regex("3|c1|с1|третє"), -6),
                 new Question("4. Повернення до головного меню/нижче за В1", Constants.toMainRegex, 0)
             }, true);
-            screens[6] = new OpScreen((int)Constants.Images.ROBOT, "Screen 6", new Question[] { 
+            screens[6] = new OpScreen((int)Constants.Images.NULL, "Судячи з ваших вiдповiдей, я можу вам порекомендувати один з" +
+                "цих ВНЗ:\n", new Question[] { 
                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
                 new Question("1. Льовен", new Regex("1|льовен"), 10),
                 new Question("2. Ільменау", new Regex("2|ільменау"), 11),

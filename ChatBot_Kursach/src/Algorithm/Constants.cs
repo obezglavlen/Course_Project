@@ -11,7 +11,8 @@ namespace ChatBot_Kursach
     {
         public enum Images
         {
-            ROBOT = 1,
+            NULL,
+            ROBOT,
             SEND,
             HEART,
             LEUVEN,
