@@ -186,6 +186,8 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "ChatBot";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.ResizeBegin += new System.EventHandler(this.ChatBot_ResizeBegin);
+            this.ResizeEnd += new System.EventHandler(this.ChatBot_ResizeEnd);
             this.Resize += new System.EventHandler(this.ChatBot_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

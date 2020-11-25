@@ -18,7 +18,6 @@ namespace ChatBot_Kursach.MainForm
         //
         MainClass algorithmClass = new MainClass();
 
-        int InputHeight, ButtonSendWidth, FromTopToPanel, Padding;
 
         public ChatBot()
         {
@@ -158,13 +157,15 @@ namespace ChatBot_Kursach.MainForm
             about.ShowDialog();
         }
 
+
+
         private void ResizePictureBox()
         {
             label1.Top += 220;
             pictureBox1.Height = label1.Top - 10;
         }
 
-    private void ResizeText()
+        private void ResizeText()
         {
             label1.MaximumSize = new System.Drawing.Size(panel1.Width - 15, 0);
         }
@@ -172,6 +173,16 @@ namespace ChatBot_Kursach.MainForm
         private void ChatBot_Resize(object sender, EventArgs e)
         {
             ResizeText();
+        }
+
+        private void ChatBot_ResizeBegin(object sender, EventArgs e)
+        {
+            SuspendLayout();
+        }
+
+        private void ChatBot_ResizeEnd(object sender, EventArgs e)
+        {
+            ResumeLayout();
         }
     }
 }
