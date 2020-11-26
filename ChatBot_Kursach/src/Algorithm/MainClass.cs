@@ -17,6 +17,7 @@ namespace ChatBot_Kursach.Algorithms
 
         int Current, trueCurrent;
         bool m=false;
+        bool o=false;
 
         short English;
         bool IsStudent;
@@ -169,6 +170,11 @@ namespace ChatBot_Kursach.Algorithms
         public String GetText()
         {
             if (m) return screens[trueCurrent].Text + "\n\nПомилка розпізнавання ключового слова";
+            if (o)
+            {
+                o = false;
+                return screens[trueCurrent].Text + "\n\nСписок обраного оновлено";
+            }
             return screens[trueCurrent].Text;
         }
         public int ImagePath { get { return screens[trueCurrent].imagePath; } }
@@ -212,6 +218,7 @@ namespace ChatBot_Kursach.Algorithms
                         ((OpScreen)screens[6]).Set(English, IsStudent);
                         break;
                     case -7:
+                        o = true;
                         ((DynamicScreen)screens[2]).SetQuestionActive(trueCurrent);
                         break;
 
