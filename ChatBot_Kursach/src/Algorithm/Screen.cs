@@ -12,25 +12,22 @@ namespace ChatBot_Kursach.Algorithms
         protected string MainText;
         protected string TextToReturn;
         protected Question[] questions;
-        protected bool ButtonVisible;
-        public Screen(int imgPath, string mainText, Question[] Questions, bool ButtonVisible)
+
+        public Screen(int imgPath, string mainText, Question[] Questions)
         {
             ImagePath = imgPath;
             MainText = mainText;
             questions = Questions;
-            this.ButtonVisible = ButtonVisible;
         }
 
         public Screen()
         {
             ImagePath = (int)Constants.Images.ROBOT;
             MainText = "";
-            ButtonVisible = false;
         }
 
         public int imagePath { get { return ImagePath; } }
 
-        public bool Buttonvisible { get { return ButtonVisible; } }
         public virtual int CheckKeyword(string keyword)
         {
             for (int i = 0; i < questions.Length; i++)

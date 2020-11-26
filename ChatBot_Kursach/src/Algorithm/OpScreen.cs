@@ -9,14 +9,14 @@ namespace ChatBot_Kursach.Algorithms
     public class OpScreen : DynamicScreen
     {
 
-        public OpScreen(int imgPath, string mainText, Question[] Questions, bool ButtonVisible) : base()
+        public OpScreen(int imgPath, string mainText, Question[] Questions) : base()
         {
             ImagePath = imgPath;
             MainText = mainText;
             questions = Questions;
             IsQuestionActive = Enumerable.Repeat(false, 10).ToArray();
             IsQuestionActive[0] = true;
-            this.ButtonVisible = ButtonVisible;
+
         }
 
         public bool Set(short English, bool IsStudent)

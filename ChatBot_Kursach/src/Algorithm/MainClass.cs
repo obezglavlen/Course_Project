@@ -14,7 +14,7 @@ namespace ChatBot_Kursach.Algorithms
         Question[] InitQuestionList;
      //   Screen current;
         Screen[] screens;
-        Screen mistake;
+
         int Current, trueCurrent;
         bool m=false;
 
@@ -58,10 +58,10 @@ namespace ChatBot_Kursach.Algorithms
             InitQuestionList[3] = new Question("4. пройти опитування, та отримати рекомендації щодо програми\n", new  Regex("4|опитуван|прой|рекомендац"), 4);
 
             screens[0] = new Screen((int)Constants.Images.NULL, "Привіт, я — чат-бот помічник по справам академічної мобільності. Я допоможу тобі обрати відповідну програму.\n" +
-                "Спочатку, що ти хочешь введи відповідь, яка позначає те що ти хочешь.\n", InitQuestionList, false);
+                "Спочатку, що ти хочешь введи відповідь, яка позначає те що ти хочешь.\n", InitQuestionList);
             screens[1] = new Screen((int)Constants.Images.MADRID, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n", new Question[] {
                 new Question ("0. Повернення до головного меню", Constants.toMainRegex, 0)
-            },true);
+            });
             screens[2] = new DynamicScreen((int)Constants.Images.NULL, "Список обраних програм:\n", new Question[] {
                                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
                 new Question("1. Льовен", new Regex("1|льовен"), 10),
@@ -72,7 +72,7 @@ namespace ChatBot_Kursach.Algorithms
                 new Question("6. Мадрид", new Regex("6|мадрид"), 15),
                 new Question("7. Thomas More", new Regex("7|томас|thomas|more"), 16),
                 new Question("8. Артесiс ", new Regex("8|артесiс"), 17)
-            },false);
+            });
             screens[3] = new Screen((int)Constants.Images.NULL, "Ось всi доступнi програми академiчної мобiльностi:\n", new Question[] {
                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
                 new Question("1. Льовен", new Regex("1|льовен"), 10),
@@ -83,18 +83,18 @@ namespace ChatBot_Kursach.Algorithms
                 new Question("6. Мадрид", new Regex("6|мадрид"), 15),
                 new Question("7. Thomas More", new Regex("7|томас|thomas|more"), 16),
                 new Question("8. Артесiс ", new Regex("8|артесiс"), 17)
-            },false);
+            });
             screens[4] = new Screen((int)Constants.Images.NULL, "Ви студент чи викладач?", new Question[] {
                 new Question("1.Студент ", new Regex("1|студент"), -2),
                 new Question("2.Викладач ",  new Regex("2|викладач"), -3),
                 new Question("0. Повернення до головного меню/ні те, ні інше", Constants.toMainRegex, 0)
-            },true);
+            });
             screens[5] = new Screen((int)Constants.Images.NULL, "Який у вас рівень володіння англйською мовою?", new Question[] {
                 new Question("1.В1", new Regex("b1|в1|1|перше"), -4),
                 new Question("2.B2", new Regex("2|b2|в2|друге"), -5),
                 new Question("3. С1 або вище", new Regex("3|c1|с1|третє"), -6),
-                new Question("4. Повернення до головного меню/нижче за В1", Constants.toMainRegex, 0)
-            }, true);
+                new Question("0. Повернення до головного меню/нижче за В1", Constants.toMainRegex, 0)
+            });
             screens[6] = new OpScreen((int)Constants.Images.NULL, "Судячи з ваших вiдповiдей, я можу вам порекомендувати один з" +
                 "цих ВНЗ:\n", new Question[] { 
                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
@@ -106,40 +106,53 @@ namespace ChatBot_Kursach.Algorithms
                 new Question("6. Мадрид", new Regex("6|мадрид"), 15),
                 new Question("7. Thomas More", new Regex("7|томас|thomas|more"), 16),
                 new Question("8. Артесiс ", new Regex("8|артесiс"), 17)
-            }, true);
+            });
 
             screens[10] = new Screen((int)Constants.Images.LEUVEN, Constants.__LeuvenStr, new Question[] {
                 new Question("1 - Дiзнатися бiльше", new Regex("дiзнатися|бiльше|1"), 0),
+                new Question("2. Додати в обране", new Regex("додат|обран|2"), -7),
                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
-            }, true);
+
+            });
             screens[11] = new Screen((int)Constants.Images.ILMENAU, Constants.__IlmenauStr, new Question[] {
                 new Question("1 - Дiзнатися бiльше", new Regex("дiзнатися|бiльше|1"), 0),
+                new Question("2. Додати в обране", new Regex("додат|обран|2"), -7),
                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
-            }, true);
+
+            });
             screens[12] = new Screen((int)Constants.Images.DORTMUND, Constants.__DortmundStr, new Question[] {
                 new Question("1 - Дiзнатися бiльше", new Regex("дiзнатися|бiльше|1"), 0),
+                new Question("2. Додати в обране", new Regex("додат|обран|2"), -7),
                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
-            }, true);
+               
+            });
             screens[13] = new Screen((int)Constants.Images.TRANSILVANIA, Constants.__TransilvaniaStr, new Question[] {
                 new Question("1 - Дiзнатися бiльше", new Regex("дiзнатися|бiльше|1"), 0),
+                new Question("2. Додати в обране", new Regex("додат|обран|2"), -7),
                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
-            }, true);
+               
+            });
             screens[14] = new Screen((int)Constants.Images.KARINT, Constants.__KarintStr, new Question[] {
                 new Question("1 - Дiзнатися бiльше", new Regex("дiзнатися|бiльше|1"), 0),
+                 new Question("2. Додати в обране", new Regex("додат|обран|2"), -7),
                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
-            }, true);
+            });
             screens[15] = new Screen((int)Constants.Images.MADRID, Constants.__MadridStr, new Question[] {
                 new Question("1 - Дiзнатися бiльше", new Regex("дiзнатися|бiльше|1"), 0),
+                 new Question("2. Додати в обране", new Regex("додат|обран|2"), -7),
                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
-            }, true);
+            });
             screens[16] = new Screen((int)Constants.Images.THOMAS, Constants.__ThomasStr, new Question[] {
                 new Question("1 - Дiзнатися бiльше", new Regex("дiзнатися|бiльше|1"), 0),
+                 new Question("2. Додати в обране", new Regex("додат|обран|2"), -7),
                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
-            }, true);
+            });
             screens[17] = new Screen((int)Constants.Images.ARTESIS, Constants.__ArtesisStr, new Question[] {
                 new Question("1 - Дiзнатися бiльше", new Regex("дiзнатися|бiльше|1"), 0),
+                 new Question("2. Додати в обране", new Regex("додат|обран|2"), -7),
                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
-            }, true);
+               
+            });
             //1:льовен, 2: Ыльмен, 3: Дортмунд, 4:Трансильвания, 5: Каринтій, 6: Мадрид, 7:Tomas, 8:Artesis, 
             //  ((DynamicScreen)screens[2]).SetQuestionActive(1);
             ///////////////////////////////////////////////
@@ -159,10 +172,10 @@ namespace ChatBot_Kursach.Algorithms
             return screens[trueCurrent].Text;
         }
         public int ImagePath { get { return screens[trueCurrent].imagePath; } }
-        public bool IsButtonVisible {  get {  return screens[trueCurrent].Buttonvisible; } }
+
         
         
-        public Screen CheckKeyWord(string keyword)
+        public void CheckKeyWord(string keyword)
         {
 
             Current = screens[trueCurrent].CheckKeyword(keyword.ToLower());
@@ -172,7 +185,7 @@ namespace ChatBot_Kursach.Algorithms
                 switch (Current) {
                     case -1:
                         m = true;
-                        return mistake;
+                        return;
 
                     case -2:
                         trueCurrent++;
@@ -198,6 +211,9 @@ namespace ChatBot_Kursach.Algorithms
                         English = 3;
                         ((OpScreen)screens[6]).Set(English, IsStudent);
                         break;
+                    case -7:
+                        ((DynamicScreen)screens[2]).SetQuestionActive(trueCurrent);
+                        break;
 
                     default: break;
                 }
@@ -216,7 +232,7 @@ namespace ChatBot_Kursach.Algorithms
                 
             }
             m = false;
-             return screens[trueCurrent];
+            
             // Тут надо try catch
             /* Current = screens[trueCurrent].CheckKeyword(keyword);
              if(Current>=0) trueCurrent = Current;
@@ -227,10 +243,7 @@ namespace ChatBot_Kursach.Algorithms
          return mistake; // Тут надо try catch*/
         }
 
-        public void SetFavActive()
-        {
-            ((DynamicScreen)screens[2]).SetQuestionActive(trueCurrent - 9);
-        }
+        
 
         public void ClearFav()
         {

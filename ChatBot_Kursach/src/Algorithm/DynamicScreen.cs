@@ -11,7 +11,7 @@ namespace ChatBot_Kursach.Algorithms
     {
         protected bool[] IsQuestionActive;
 
-        public DynamicScreen(int imgPath, string mainText, Question[] Questions, bool ButtonVisible) : base()
+        public DynamicScreen(int imgPath, string mainText, Question[] Questions) : base()
         {
             ImagePath = imgPath;
             MainText = mainText;
@@ -19,14 +19,14 @@ namespace ChatBot_Kursach.Algorithms
             IsQuestionActive = Enumerable.Repeat(false, 10).ToArray();
             IsQuestionActive[0] = true;
 
-            this.ButtonVisible = ButtonVisible;
+
         }
 
         public DynamicScreen() : base()
         {
             ImagePath = (int)Constants.Images.ROBOT;
             MainText = "";
-            ButtonVisible = false;
+
         }
 
         public override int CheckKeyword(string keyword)
@@ -43,11 +43,11 @@ namespace ChatBot_Kursach.Algorithms
 
         public bool GetQuestionActive(int q)
         {
-            return IsQuestionActive[q];
+            return IsQuestionActive[q-9];
         }
         public void SetQuestionActive(int q)
         {
-            IsQuestionActive[q] = !IsQuestionActive[q];
+            IsQuestionActive[q-9] = !IsQuestionActive[q-9];
         }
 
         public void ClearQuestionActive()

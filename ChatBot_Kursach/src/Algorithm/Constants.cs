@@ -27,14 +27,14 @@ namespace ChatBot_Kursach
 
         public static Regex toMainRegex = new Regex("0|головне|меню|повернутися");
 
-        public static string __LeuvenStr;
-        public static string __IlmenauStr;
-        public static string __DortmundStr;
-        public static string __MadridStr;
-        public static string __KarintStr;
-        public static string __ArtesisStr;
-        public static string __ThomasStr;
-        public static string __TransilvaniaStr;
+        public static string __LeuvenStr = "";
+        public static string __IlmenauStr = "";
+        public static string __DortmundStr = "";
+        public static string __MadridStr = "";
+        public static string __KarintStr = "";
+        public static string __ArtesisStr = "";
+        public static string __ThomasStr = "";
+        public static string __TransilvaniaStr = "";
 
     }
 }
