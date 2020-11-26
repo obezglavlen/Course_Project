@@ -31,7 +31,7 @@ namespace ChatBot_Kursach.MainForm
 
        
 
-        private void createInBouble()
+        private void createOutBouble()
         {
             panel1.VerticalScroll.Value = 0;
             panel1.PerformLayout();
@@ -160,14 +160,19 @@ namespace ChatBot_Kursach.MainForm
                         break;
                     }
             }
-
+         
             prevMessage += tmp.Height + 20;
+
+            Label Padd = new Label();
+            panel1.Controls.Add(Padd);
+            Padd.Height = 10;
+            Padd.Location = new System.Drawing.Point(10, prevMessage);
 
             panel1.VerticalScroll.Value = panel1.VerticalScroll.Maximum;
             panel1.PerformLayout();
         }
 
-        private void createOutBouble()
+        private void createInBouble()
         {
             panel1.VerticalScroll.Value = 0;
             panel1.PerformLayout();
@@ -209,8 +214,8 @@ namespace ChatBot_Kursach.MainForm
             algorithmClass.CheckKeyWord(inputString);
             textBox1.Text = "";
 
-            createOutBouble();
             createInBouble();
+            createOutBouble();
 
             button2.Visible = algorithmClass.IsButtonVisible;
             if (button2.Visible && algorithmClass.IsButtonLiked) button2.Image = Properties.Resources.heart_enabled;
@@ -228,7 +233,7 @@ namespace ChatBot_Kursach.MainForm
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            createInBouble();
+            createOutBouble();
             //pictureBox1.Image = Properties.Resources.robot;
             button2.Visible = false;
         }
