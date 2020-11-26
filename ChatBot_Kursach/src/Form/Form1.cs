@@ -17,12 +17,12 @@ namespace ChatBot_Kursach.MainForm
         // Добавление екземпляра класса MainClass
         //
         MainClass algorithmClass = new MainClass();
-
+        int prevMessage = 0;
+        string inputString;
 
         public ChatBot()
         {
             InitializeComponent();
-            ResizeText();
 
             //panel1.Left = 15;
             //textBox1.Left = 15;
@@ -31,101 +31,187 @@ namespace ChatBot_Kursach.MainForm
 
        
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void createInBouble()
         {
-            string inputString = textBox1.Text.ToString();
-            if (inputString.Equals(""))
-            {
-                return;
-            }
-            algorithmClass.CheckKeyWord(inputString);
-            label1.Text = algorithmClass.GetText();
-            textBox1.Text = "";
-            button2.Visible = algorithmClass.IsButtonVisible; // true or false
+            panel1.VerticalScroll.Value = 0;
+            panel1.PerformLayout();
+
+            PictureBox pic = new PictureBox();
+            Panel tmp = new Panel();
+            Label lab = new Label();
+
+            tmp.Parent = panel1;
+            lab.Parent = tmp;
+            pic.Parent = tmp;
+
+            tmp.Controls.Add(lab);
+            tmp.Controls.Add(pic);
+            panel1.Controls.Add(tmp);
+
+            tmp.Location = new System.Drawing.Point(10, 20 + prevMessage);
+            tmp.BackColor = System.Drawing.Color.FromArgb(255, 240, 240, 240);
+            tmp.BringToFront();
+            tmp.AutoScroll = true;
+            tmp.AutoSize = true;
+            tmp.MaximumSize = new System.Drawing.Size(panel1.Width - 20, 0);
+
+            lab.Location = new System.Drawing.Point(5, 5);
+            lab.AutoSize = true;
+            lab.MaximumSize = new System.Drawing.Size(tmp.Width - 20, 0);
+            lab.Margin = new Padding(5);
+            lab.Text = algorithmClass.GetText();
+
+            pic.SizeMode = PictureBoxSizeMode.StretchImage;
+            pic.Size = new System.Drawing.Size(tmp.Width - 20, 10);
+            pic.Location = new System.Drawing.Point((tmp.Width - pic.Width) / 2, 5);
+
             switch (algorithmClass.ImagePath)
             {
                 case (int)Constants.Images.NULL:
                     {
-                        label1.Top = 5;
-                        pictureBox1.Image = null;
-                        pictureBox1.Height = 0;
+                        lab.Top = 5;
+                        pic.Image = null;
+                        pic.Height = 0;
                         break;
                     }
                 case (int)Constants.Images.ROBOT:
                     {
-                        ResizePictureBox();
-                        pictureBox1.Image = Properties.Resources.robot;
+                        lab.Top += 150;
+                        pic.Height = lab.Top - 10;
+                        pic.Image = Properties.Resources.robot;
                         break;
-                    }          
+                    }
                 case (int)Constants.Images.SEND:
                     {
-                        ResizePictureBox();
-                        pictureBox1.Image = Properties.Resources.send;
+                        lab.Top += 150;
+                        pic.Height = lab.Top - 10;
+                        pic.Image = Properties.Resources.send;
                         break;
 
                     }
                 case (int)Constants.Images.HEART:
                     {
-                        ResizePictureBox();
-                        pictureBox1.Image = Properties.Resources.heart_disabled;
+                        lab.Top += 150;
+                        pic.Height = lab.Top - 10;
+                        pic.Image = Properties.Resources.heart_disabled;
                         break;
                     }
                 case (int)Constants.Images.LEUVEN:
                     {
-                        ResizePictureBox();
-                        pictureBox1.Image = Properties.Resources.KULeuven;
+                        lab.Top += 150;
+                        pic.Height = lab.Top - 10;
+                        pic.Image = Properties.Resources.KULeuven;
                         break;
                     }
                 case (int)Constants.Images.ILMENAU:
                     {
-                        ResizePictureBox();
-                        pictureBox1.Image = Properties.Resources.ilmenau;
+                        lab.Top += 150;
+                        pic.Height = lab.Top - 10;
+                        pic.Image = Properties.Resources.ilmenau;
                         break;
                     }
                 case (int)Constants.Images.DORTMUND:
                     {
-                        ResizePictureBox();
-                        pictureBox1.Image = Properties.Resources.Dortmund;
+                        lab.Top += 150;
+                        pic.Height = lab.Top - 10;
+                        pic.Image = Properties.Resources.Dortmund;
                         break;
                     }
                 case (int)Constants.Images.MADRID:
                     {
-                        ResizePictureBox();
-                        pictureBox1.Image = Properties.Resources.Madrid_Politech;
+                        lab.Top += 150;
+                        pic.Height = lab.Top - 10;
+                        pic.Image = Properties.Resources.Madrid_Politech;
                         break;
                     }
                 case (int)Constants.Images.KARINT:
                     {
-                        ResizePictureBox();
-                        pictureBox1.Image = Properties.Resources.Karint_Univ;
+                        lab.Top += 150;
+                        pic.Height = lab.Top - 10;
+                        pic.Image = Properties.Resources.Karint_Univ;
                         break;
                     }
                 case (int)Constants.Images.ARTESIS:
                     {
-                        ResizePictureBox();
-                        pictureBox1.Image = Properties.Resources.Artests_Plantijn;
+                        lab.Top += 150;
+                        pic.Height = lab.Top - 10;
+                        pic.Image = Properties.Resources.Artests_Plantijn;
                         break;
                     }
                 case (int)Constants.Images.THOMAS:
                     {
-                        ResizePictureBox();
-                        pictureBox1.Image = Properties.Resources.Thomas_More;
+                        lab.Top += 150;
+                        pic.Height = lab.Top - 10;
+                        pic.Image = Properties.Resources.Thomas_More;
                         break;
                     }
                 case (int)Constants.Images.TRANSILVANIA:
                     {
-                        ResizePictureBox();
-                        pictureBox1.Image = Properties.Resources.Transilvania;
+                        lab.Top += 150;
+                        pic.Height = lab.Top - 10;
+                        pic.Image = Properties.Resources.Transilvania;
                         break;
                     }
                 default:
                     {
-                        label1.Top = 5;
-                        pictureBox1.Height = 0;
-                        pictureBox1.Image = null;
+                        lab.Top = 5;
+                        pic.Height = 0;
+                        pic.Image = null;
                         break;
                     }
-            }   
+            }
+
+            prevMessage += tmp.Height + 20;
+
+            panel1.VerticalScroll.Value = panel1.VerticalScroll.Maximum;
+            panel1.PerformLayout();
+        }
+
+        private void createOutBouble()
+        {
+            panel1.VerticalScroll.Value = 0;
+            panel1.PerformLayout();
+
+            Panel tmpin = new Panel();
+            Label labin = new Label();
+
+            tmpin.Parent = panel1;
+            labin.Parent = tmpin;
+
+            tmpin.Controls.Add(labin);
+            panel1.Controls.Add(tmpin);
+
+            tmpin.Location = new System.Drawing.Point(this.Width - 90, 10 + prevMessage);
+            tmpin.BackColor = System.Drawing.Color.FromArgb(255, 215, 255, 222);
+            tmpin.MaximumSize = new System.Drawing.Size(40, 20);
+            tmpin.BringToFront();
+            tmpin.Anchor = AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom;
+
+            labin.Location = new System.Drawing.Point(5, 5);
+            labin.AutoSize = true;
+            labin.Margin = new Padding(5);
+            labin.Text = inputString;
+
+            prevMessage += tmpin.Height + 20;
+
+        }
+
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+            inputString = textBox1.Text.ToString();
+            if (inputString.Equals(""))
+            {
+                return;
+            }
+
+            algorithmClass.CheckKeyWord(inputString);
+            textBox1.Text = "";
+
+            createOutBouble();
+            createInBouble();
+
             button2.Visible = algorithmClass.IsButtonVisible;
             if (button2.Visible && algorithmClass.IsButtonLiked) button2.Image = Properties.Resources.heart_enabled;
                 else button2.Image = Properties.Resources.heart_disabled;
@@ -133,13 +219,16 @@ namespace ChatBot_Kursach.MainForm
 
         private void очиститьToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             algorithmClass.ClearFav();
+            
+
             //fileClass.erase();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            label1.Text = algorithmClass.Init().Text;
+            createInBouble();
             //pictureBox1.Image = Properties.Resources.robot;
             button2.Visible = false;
         }
@@ -155,24 +244,6 @@ namespace ChatBot_Kursach.MainForm
         {
             About about = new About();
             about.ShowDialog();
-        }
-
-
-
-        private void ResizePictureBox()
-        {
-            label1.Top += 220;
-            pictureBox1.Height = label1.Top - 10;
-        }
-
-        private void ResizeText()
-        {
-            label1.MaximumSize = new System.Drawing.Size(panel1.Width - 15, 0);
-        }
-
-        private void ChatBot_Resize(object sender, EventArgs e)
-        {
-            ResizeText();
         }
 
         private void ChatBot_ResizeBegin(object sender, EventArgs e)
