@@ -51,7 +51,6 @@ namespace ChatBot_Kursach.MainForm
             tmp.Location = new System.Drawing.Point(10, 20 + prevMessage);
             tmp.BackColor = System.Drawing.Color.FromArgb(255, 240, 240, 240);
             tmp.BringToFront();
-            tmp.AutoScroll = true;
             tmp.AutoSize = true;
             tmp.MaximumSize = new System.Drawing.Size(panel1.Width - 20, 0);
 
@@ -186,18 +185,22 @@ namespace ChatBot_Kursach.MainForm
             tmpin.Controls.Add(labin);
             panel1.Controls.Add(tmpin);
 
-            tmpin.Location = new System.Drawing.Point(this.Width - 90, 10 + prevMessage);
+            labin.Location = new System.Drawing.Point(0, 5);
+            labin.Margin = new Padding(5);
+            labin.AutoSize = true;
+            labin.Text = inputString;
+            labin.MaximumSize = new System.Drawing.Size(panel1.Width - 40, 0);
+
             tmpin.BackColor = System.Drawing.Color.FromArgb(255, 215, 255, 222);
-            tmpin.MaximumSize = new System.Drawing.Size(40, 20);
+            tmpin.MaximumSize = new System.Drawing.Size(labin.Width, labin.Height + 10);
+            tmpin.AutoSize = true;
             tmpin.BringToFront();
             tmpin.Anchor = AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom;
+            tmpin.Location = new System.Drawing.Point(panel1.Width - tmpin.Width - 20, 10 + prevMessage);
 
-            labin.Location = new System.Drawing.Point(5, 5);
-            labin.AutoSize = true;
-            labin.Margin = new Padding(5);
-            labin.Text = inputString;
 
-            prevMessage += tmpin.Height + 20;
+
+            prevMessage += tmpin.Height + 10;
 
         }
 
