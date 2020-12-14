@@ -11,6 +11,7 @@ namespace ChatBot_Kursach.Algorithms
    
     public class MainClass {
 
+
         Question[] InitQuestionList;
      //   Screen current;
         Screen[] screens;
@@ -52,6 +53,13 @@ namespace ChatBot_Kursach.Algorithms
 */
 
             ///////////////////////////////
+            ///
+
+            WorkWithFiles.XMLFile myxml = new WorkWithFiles.XMLFile("univers");
+            myxml.LoadInfo();
+
+
+
             InitQuestionList = new Question[4];
             InitQuestionList[0] = new Question("1. дізнатися, що таке міжнародна академічна мобільність\n", new  Regex("1|академічн|мобільн"), 1);
             InitQuestionList[1] = new Question("2. переглянути обране\n", new Regex("2|обран"), 2);

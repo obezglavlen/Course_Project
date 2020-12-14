@@ -237,6 +237,7 @@ namespace ChatBot_Kursach.MainForm
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            algorithmClass.Init();
             createOutBouble();
             //pictureBox1.Image = Properties.Resources.robot;
 
