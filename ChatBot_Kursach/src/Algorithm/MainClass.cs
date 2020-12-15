@@ -12,6 +12,7 @@ namespace ChatBot_Kursach.Algorithms
    
     public class MainClass {
 
+
         Question[] InitQuestionList;
      //   Screen current;
         Screen[] screens;
@@ -53,7 +54,15 @@ namespace ChatBot_Kursach.Algorithms
 */
             
             ///////////////////////////////
-<<<<<<< Updated upstream
+
+            ///
+
+            WorkWithFiles.XMLFile myxml = new WorkWithFiles.XMLFile("univers");
+            myxml.LoadInfo();
+
+
+
+
             InitQuestionList = new Question[4];
             InitQuestionList[0] = new Question("1. дізнатися, що таке міжнародна академічна мобільність\n", new  Regex("1|академічн|мобільн"), 1);
             InitQuestionList[1] = new Question("2. переглянути обране\n", new Regex("2|обран"), 2);
@@ -157,7 +166,7 @@ namespace ChatBot_Kursach.Algorithms
                
             });
             //1:льовен, 2: Ыльмен, 3: Дортмунд, 4:Трансильвания, 5: Каринтій, 6: Мадрид, 7:Tomas, 8:Artesis, 
-=======
+
             testQuestionList = new Question[4];
             testQuestionList[0] = new Question("1. дізнатися, що таке міжнародна академічна мобільність\n", new  Regex("1|академічн|мобільн"), 1);
             testQuestionList[3] = new Question("4. пройти опитування, та отримати рекомендації щодо програми\n", new  Regex("4|опитуван|прой|рекомендац"), 4);
@@ -173,7 +182,7 @@ namespace ChatBot_Kursach.Algorithms
                 new Question("2.Не володію ", new  Regex("2|не волод|ні"), -3),
              new Question("0. Повернення до головного меню", new  Regex("2|ні|майже|не волод"), 0)},true);
             screens[5] = new Screen("send", "Screen 5\nЯкий у вас середній бал?", new Question[] { new Question("0. Повернення до головного меню", new  Regex("0"), 0) }, true);
->>>>>>> Stashed changes
+
             //  ((DynamicScreen)screens[2]).SetQuestionActive(1);
             ///////////////////////////////////////////////
 
