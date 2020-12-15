@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 
@@ -50,8 +51,9 @@ namespace ChatBot_Kursach.Algorithms
             }
 
 */
-
+            
             ///////////////////////////////
+<<<<<<< Updated upstream
             InitQuestionList = new Question[4];
             InitQuestionList[0] = new Question("1. дізнатися, що таке міжнародна академічна мобільність\n", new  Regex("1|академічн|мобільн"), 1);
             InitQuestionList[1] = new Question("2. переглянути обране\n", new Regex("2|обран"), 2);
@@ -155,6 +157,23 @@ namespace ChatBot_Kursach.Algorithms
                
             });
             //1:льовен, 2: Ыльмен, 3: Дортмунд, 4:Трансильвания, 5: Каринтій, 6: Мадрид, 7:Tomas, 8:Artesis, 
+=======
+            testQuestionList = new Question[4];
+            testQuestionList[0] = new Question("1. дізнатися, що таке міжнародна академічна мобільність\n", new  Regex("1|академічн|мобільн"), 1);
+            testQuestionList[3] = new Question("4. пройти опитування, та отримати рекомендації щодо програми\n", new  Regex("4|опитуван|прой|рекомендац"), 4);
+            testQuestionList[2] = new Question("3. переглянути всі програми академічної мобільності\n", new  Regex("3|всі|програм"), 3);
+            testQuestionList[1] = new Question("2. переглянути обране\n", new  Regex("2|обран"), 2);
+            mistake = new Screen("robot", "Усе погано", new Question[] { new Question("0. Повернення до головного меню", new  Regex("0"), 0) },false);
+            screens[0] = new Screen("robot", "Привіт, я — чат-бот помічник по справам академічної мобільності. Я допоможу тобі обрати відповідну програму.\n" +
+                "Спочатку, що ти хочешь введи відповідь, яка позначає те що ти хочешь.\n", testQuestionList, false);
+            screens[1] = new Screen("send", "Screen 1", new Question[] { new Question ("0. Повернення до головного меню", new  Regex("0"), 0) },true);
+            screens[2] = new DynamicScreen("heart", "Screen 2\nСписок обраних програм:", new Question[] { new Question("0. Повернення до головного меню", new  Regex("0"), 0) },false);
+            screens[3] = new Screen("robot", "Screen 3", new Question[] { new Question("0. Повернення до головного меню", new  Regex("0"), 0) },true);
+            screens[4] = new Screen("heart", "Screen 4\nЧи володієте в англійською мовою на рівні В1 або вище", new Question[] { new Question("1.Володію ", new  Regex("1|волод|так"), -2),
+                new Question("2.Не володію ", new  Regex("2|не волод|ні"), -3),
+             new Question("0. Повернення до головного меню", new  Regex("2|ні|майже|не волод"), 0)},true);
+            screens[5] = new Screen("send", "Screen 5\nЯкий у вас середній бал?", new Question[] { new Question("0. Повернення до головного меню", new  Regex("0"), 0) }, true);
+>>>>>>> Stashed changes
             //  ((DynamicScreen)screens[2]).SetQuestionActive(1);
             ///////////////////////////////////////////////
 
