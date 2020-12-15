@@ -256,7 +256,7 @@ namespace ChatBot_Kursach.Algorithms
         {
             ((DynamicScreen)screens[2]).ClearQuestionActive();
         }
-        public bool IsButtonLiked { get { return ((DynamicScreen)screens[2]).GetQuestionActive(trueCurrent - 9); } }
+       // public bool IsButtonLiked { get { return ((DynamicScreen)screens[2]).GetQuestionActive(trueCurrent - 9); } }
 
     }
 }
