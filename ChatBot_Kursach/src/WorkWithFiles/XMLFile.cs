@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using ChatBot_Kursach.Exceptions;
 
 namespace ChatBot_Kursach.WorkWithFiles
 {
@@ -13,8 +15,22 @@ namespace ChatBot_Kursach.WorkWithFiles
         private XmlElement root;
         public XMLFile(string docname)
         {
-            mydoc.Load($"{docname}.xml");
-            root = mydoc.DocumentElement;
+            try
+            {
+
+                if (!File.Exists($"{docname}.xml")) throw new FileException(1);
+                mydoc.Load($"{docname}.xml");
+                root = mydoc.DocumentElement;
+            }
+            catch(FileException ex)
+            {
+
+            }
+
+            catch(Exception ex)
+            {
+                new MyException(ex);
+            }
         }
         public void LoadInfo()
         {

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ChatBot_Kursach.Algorithms;
-
+using ChatBot_Kursach.Exceptions;
 namespace ChatBot_Kursach.MainForm
 {
     public partial class ChatBot : Form
@@ -207,7 +207,7 @@ namespace ChatBot_Kursach.MainForm
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
+            
             inputString = textBox1.Text.ToString();
             if (inputString.Equals(""))
             {
@@ -237,7 +237,7 @@ namespace ChatBot_Kursach.MainForm
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            algorithmClass.Init();
+       //     algorithmClass.Init();
             createOutBouble();
             //pictureBox1.Image = Properties.Resources.robot;
 
@@ -259,5 +259,11 @@ namespace ChatBot_Kursach.MainForm
         {
             ResumeLayout();
         }
+
+
+
     }
+
+
+
 }

@@ -17,7 +17,9 @@ namespace ChatBot_Kursach
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ChatBot());
+            ChatBot ch = new ChatBot();
+            Application.Run(ch);
         }
+
     }
 }
