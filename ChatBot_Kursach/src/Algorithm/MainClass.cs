@@ -238,7 +238,7 @@ namespace ChatBot_Kursach.Algorithms
             }
             catch (MyException ex)
             {
-                m = ex.what;
+                m = "\n\n"+ ex.what;
 
             }
             catch (Exception ex)

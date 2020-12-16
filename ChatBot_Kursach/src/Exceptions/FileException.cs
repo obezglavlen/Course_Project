@@ -17,8 +17,10 @@ namespace ChatBot_Kursach.Exceptions
                     what = "У директорії програми не знайдено файлу univers.xml.";
                     InitAlert(what);
                     break;
-
-
+                case 2:
+                    what = "Файл univers.xml був пошкоджений.";
+                    InitAlert(what);
+                    break;
                 default:
                     what = "При роботі з файлами виникла помилка.";
                     InitAlert(what);

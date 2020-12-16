@@ -18,7 +18,7 @@ namespace ChatBot_Kursach.Exceptions
                 case 1:
                     /*                    System.Windows.Forms.Form form1 = ChatBot_Kursach.MainForm.ChatBot.ActiveForm;
                                         form1.Close();*/
-                    what = "\n\nПомилка введення ключового слова";
+                    what = "Помилка введення ключового слова";
                     break;
 
                 default:
