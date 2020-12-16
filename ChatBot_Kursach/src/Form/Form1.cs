@@ -237,10 +237,8 @@ namespace ChatBot_Kursach.MainForm
 
         private void Form1_Load(object sender, EventArgs e)
         {
-       //     algorithmClass.Init();
-            createOutBouble();
-            //pictureBox1.Image = Properties.Resources.robot;
 
+            createOutBouble();
         }
 
 
@@ -261,6 +259,10 @@ namespace ChatBot_Kursach.MainForm
         }
 
 
+        private void ChatBot_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            WorkWithFiles.JSONFile.SaveInfo("favorites");
+        }
 
     }
 

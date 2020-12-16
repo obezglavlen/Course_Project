@@ -16,8 +16,8 @@ namespace ChatBot_Kursach.Algorithms
             ImagePath = imgPath;
             MainText = mainText;
             questions = Questions;
-            IsQuestionActive = Enumerable.Repeat(false, 10).ToArray();
-            IsQuestionActive[0] = true;
+            //IsQuestionActive = Enumerable.Repeat(false, 10).ToArray();
+            IsQuestionActive = Constants.Liked;
 
 
         }
@@ -52,8 +52,9 @@ namespace ChatBot_Kursach.Algorithms
 
         public void ClearQuestionActive()
         {
-            IsQuestionActive = Enumerable.Repeat(false, 10).ToArray();
-            IsQuestionActive[0] = true;
+            Constants.Liked = Enumerable.Repeat(false, 10).ToArray();
+            Constants.Liked[0] = true;
+            IsQuestionActive = Constants.Liked;
         }
         public override string Text
         {

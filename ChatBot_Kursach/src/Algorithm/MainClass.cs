@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using System.Text.RegularExpressions;
 using ChatBot_Kursach.Exceptions;
+
 
 namespace ChatBot_Kursach.Algorithms
 {
@@ -33,35 +33,11 @@ namespace ChatBot_Kursach.Algorithms
             mistake = new Screen((int)Constants.Images.NULL, "Під час роботи програми виникла помилка, будь ласка, перезапустіть програму, у разі повторення помилки перевстановіть програму", new Question[0]);
             Current = trueCurrent = 0;
             m = "";
-            ////////////////////////////////////////
-            /*string img, txt;
-            string[] kv;//keyword
-            string vopros;
-            Question[] qqq;
-            for(int i = 0; i < 40; i++)
-            {
-                qqq = new Question[xml[i].countQuestions];
-                img = xml[i].img;
-                txt = xml[i].txt;
-                vopros = xml[i].vopros;
-                kv = new string[xml[i].countofkv];
-                for(int j=0;j<xml[i].countofkv;j++) kv[j]= xml[i].stringN;
 
-                for(int j=0;i<xml[i].countQuestions;j++)
-                qqq[i] = new Question(vopros,kv,xml[i].next);
-                screens[i] = new Screen(img, txt, qqq);
-            }
-
-*/
-            
-            ///////////////////////////////
-
-            ///
 
             WorkWithFiles.XMLFile myxml = new WorkWithFiles.XMLFile("univers");
             myxml.LoadInfo();
-
-
+            WorkWithFiles.JSONFile.LoadInfo("favorites");
 
 
             InitQuestionList = new Question[4];
@@ -72,7 +48,7 @@ namespace ChatBot_Kursach.Algorithms
 
             screens[0] = new Screen((int)Constants.Images.NULL, "Привіт, я — чат-бот помічник по справам академічної мобільності. Я допоможу тобі обрати відповідну програму.\n" +
                 "Спочатку, що ти хочешь введи відповідь, яка позначає те що ти хочешь.\n", InitQuestionList);
-            screens[1] = new Screen((int)Constants.Images.MADRID, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n", new Question[] {
+            screens[1] = new Screen((int)Constants.Images.MADRID, Constants.__About, new Question[] {
                 new Question ("0. Повернення до головного меню", Constants.toMainRegex, 0)
             });
             screens[2] = new DynamicScreen((int)Constants.Images.NULL, "Список обраних програм:\n", new Question[] {
@@ -166,15 +142,10 @@ namespace ChatBot_Kursach.Algorithms
                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
                
             });
-            //1:льовен, 2: Ыльмен, 3: Дортмунд, 4:Трансильвания, 5: Каринтій, 6: Мадрид, 7:Tomas, 8:Artesis, 
 
-            //  ((DynamicScreen)screens[2]).SetQuestionActive(1);
-            ///////////////////////////////////////////////
 
         }
-
-
-
+        
 
 
         public String GetText()
