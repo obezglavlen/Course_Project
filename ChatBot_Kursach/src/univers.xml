@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<univers>
+	<about>
+		<id>about</id>
+    	<text>Академічна мобільність є одним із пріоритетних напрямів діяльності Інституту, що передбачає можливість учасників освітнього процесу навчатися, викладати, стажуватися чи проводити наукову діяльність тощо в іншому вищому навчальному закладі на території України чи поза її межами.</text>
+	</about>   	
+	<univer>
+  		<name>Karint</name>
+  		<about>Каринтій це універ, який знаходиться у ...</about>
+	</univer>
+	<univer>
+		<name>Artesis</name>
+		<about>Університет Артезіс знаходиться у ...</about>
+	</univer>
+	<univer>
+		<name>Leuven</name>
+		<about>Університет Льовен знаходиться у ...</about>
+	</univer>
+	<univer>
+		<name>Ilmenau</name>
+		<about>Університет Ільменау знаходиться у</about>
+	</univer>
+	<univer>
+		<name>Dortmund</name>
+		<about>Дортнумн - університет який знаходиться ...</about>
+	</univer>
+	<univer>
+		<name>Madrid</name>
+		<about>Університет мадрид знаходиться у ...</about>
+	</univer>
+	<univer>
+		<name>Thomas</name>
+		<about>Університет Томас Мор знаходиться у ...</about>
+	</univer>
+	<univer>
+		<name>Transilvania</name>
+		<about>Університет Трансільванія знаходиться у ...</about>
+	</univer>
+</univers>

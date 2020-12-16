@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using System.Text.RegularExpressions;
 
 
 namespace ChatBot_Kursach.Algorithms
@@ -32,30 +31,6 @@ namespace ChatBot_Kursach.Algorithms
             //6 -OpScreen скрин с подобранными универами
             
             Current = trueCurrent = 0;
-            ////////////////////////////////////////
-            /*string img, txt;
-            string[] kv;//keyword
-            string vopros;
-            Question[] qqq;
-            for(int i = 0; i < 40; i++)
-            {
-                qqq = new Question[xml[i].countQuestions];
-                img = xml[i].img;
-                txt = xml[i].txt;
-                vopros = xml[i].vopros;
-                kv = new string[xml[i].countofkv];
-                for(int j=0;j<xml[i].countofkv;j++) kv[j]= xml[i].stringN;
-
-                for(int j=0;i<xml[i].countQuestions;j++)
-                qqq[i] = new Question(vopros,kv,xml[i].next);
-                screens[i] = new Screen(img, txt, qqq);
-            }
-
-*/
-            
-            ///////////////////////////////
-
-            ///
 
             WorkWithFiles.XMLFile myxml = new WorkWithFiles.XMLFile("univers");
             myxml.LoadInfo();
@@ -71,7 +46,7 @@ namespace ChatBot_Kursach.Algorithms
 
             screens[0] = new Screen((int)Constants.Images.NULL, "Привіт, я — чат-бот помічник по справам академічної мобільності. Я допоможу тобі обрати відповідну програму.\n" +
                 "Спочатку, що ти хочешь введи відповідь, яка позначає те що ти хочешь.\n", InitQuestionList);
-            screens[1] = new Screen((int)Constants.Images.MADRID, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n", new Question[] {
+            screens[1] = new Screen((int)Constants.Images.MADRID, Constants.__About, new Question[] {
                 new Question ("0. Повернення до головного меню", Constants.toMainRegex, 0)
             });
             screens[2] = new DynamicScreen((int)Constants.Images.NULL, "Список обраних програм:\n", new Question[] {
@@ -165,34 +140,6 @@ namespace ChatBot_Kursach.Algorithms
                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
                
             });
-            //1:льовен, 2: Ыльмен, 3: Дортмунд, 4:Трансильвания, 5: Каринтій, 6: Мадрид, 7:Tomas, 8:Artesis, 
-
-            testQuestionList = new Question[4];
-            testQuestionList[0] = new Question("1. дізнатися, що таке міжнародна академічна мобільність\n", new  Regex("1|академічн|мобільн"), 1);
-            testQuestionList[3] = new Question("4. пройти опитування, та отримати рекомендації щодо програми\n", new  Regex("4|опитуван|прой|рекомендац"), 4);
-            testQuestionList[2] = new Question("3. переглянути всі програми академічної мобільності\n", new  Regex("3|всі|програм"), 3);
-            testQuestionList[1] = new Question("2. переглянути обране\n", new  Regex("2|обран"), 2);
-            mistake = new Screen("robot", "Усе погано", new Question[] { new Question("0. Повернення до головного меню", new  Regex("0"), 0) },false);
-            screens[0] = new Screen("robot", "Привіт, я — чат-бот помічник по справам академічної мобільності. Я допоможу тобі обрати відповідну програму.\n" +
-                "Спочатку, що ти хочешь введи відповідь, яка позначає те що ти хочешь.\n", testQuestionList, false);
-            screens[1] = new Screen("send", "Screen 1", new Question[] { new Question ("0. Повернення до головного меню", new  Regex("0"), 0) },true);
-            screens[2] = new DynamicScreen("heart", "Screen 2\nСписок обраних програм:", new Question[] { new Question("0. Повернення до головного меню", new  Regex("0"), 0) },false);
-            screens[3] = new Screen("robot", "Screen 3", new Question[] { new Question("0. Повернення до головного меню", new  Regex("0"), 0) },true);
-            screens[4] = new Screen("heart", "Screen 4\nЧи володієте в англійською мовою на рівні В1 або вище", new Question[] { new Question("1.Володію ", new  Regex("1|волод|так"), -2),
-                new Question("2.Не володію ", new  Regex("2|не волод|ні"), -3),
-             new Question("0. Повернення до головного меню", new  Regex("2|ні|майже|не волод"), 0)},true);
-            screens[5] = new Screen("send", "Screen 5\nЯкий у вас середній бал?", new Question[] { new Question("0. Повернення до головного меню", new  Regex("0"), 0) }, true);
-
-            //  ((DynamicScreen)screens[2]).SetQuestionActive(1);
-            ///////////////////////////////////////////////
-
-        }
-
-
-
-        public Screen Init()
-        {
-            return screens[0];
         }
 
         public String GetText()

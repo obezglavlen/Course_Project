@@ -35,6 +35,6 @@ namespace ChatBot_Kursach
         public static string __ArtesisStr = "";
         public static string __ThomasStr = "";
         public static string __TransilvaniaStr = "";
-
+        public static string __About = "";
     }
 }

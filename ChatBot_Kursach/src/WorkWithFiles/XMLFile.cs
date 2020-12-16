@@ -13,30 +13,53 @@ namespace ChatBot_Kursach.WorkWithFiles
         private XmlElement root;
         public XMLFile(string docname)
         {
-            mydoc.Load($"{docname}.xml");
+            mydoc.Load($"..\\..\\src\\{docname}.xml");
             root = mydoc.DocumentElement;
         }
         public void LoadInfo()
         {
             foreach(XmlElement node in root)
             {
-                XmlNode univer = node.ChildNodes[0];
-                if(univer.InnerText == "Artesis")
-                    Constants.__ArtesisStr = univer.InnerText;
-                if (univer.InnerText == "Leuven")
-                    Constants.__LeuvenStr = univer.InnerText;
-                if (univer.InnerText == "Ilmenau")
-                    Constants.__IlmenauStr = univer.InnerText;
-                if (univer.InnerText == "Dortmund")
-                    Constants.__DortmundStr = univer.InnerText;
-                if (univer.InnerText == "Madrid")
-                    Constants.__MadridStr = univer.InnerText;
-                if (univer.InnerText == "Karint")
-                    Constants.__KarintStr = univer.InnerText;
-                if (univer.InnerText == "Thomas")
-                    Constants.__ThomasStr = univer.InnerText;
-                if (univer.InnerText == "Transilvania")
-                    Constants.__TransilvaniaStr = univer.InnerText;
+                XmlNode pointer = node.ChildNodes[0];
+                switch(pointer.InnerText)
+                {
+                    case "about":
+                        pointer = node.ChildNodes[1];
+                        Constants.__About = pointer.InnerText;
+                        break;
+                    case "Artesis":
+                        pointer = node.ChildNodes[1];
+                        Constants.__ArtesisStr = pointer.InnerText;
+                        break;
+                    case "Leuven":
+                        pointer = node.ChildNodes[1];
+                        Constants.__LeuvenStr = pointer.InnerText;
+                        break;
+                    case "Ilmenau":
+                        pointer = node.ChildNodes[1];
+                        Constants.__IlmenauStr = pointer.InnerText;
+                        break;
+                    case "Dortmund":
+                        pointer = node.ChildNodes[1];
+                        Constants.__DortmundStr = pointer.InnerText;
+                        break;
+                    case "Madrid":
+                        pointer = node.ChildNodes[1];
+                        Constants.__DortmundStr = pointer.InnerText;
+                        break;
+                    case "Karint":
+                        pointer = node.ChildNodes[1];
+                        Constants.__KarintStr = pointer.InnerText;
+                        break;
+                    case "Thomas":
+                        pointer = node.ChildNodes[1];
+                        Constants.__ThomasStr = pointer.InnerText;
+                        break;
+                    case "Transilvania":
+                        pointer = node.ChildNodes[1];
+                        Constants.__TransilvaniaStr = pointer.InnerText;
+                        break;
+                }
             }
         }
         
