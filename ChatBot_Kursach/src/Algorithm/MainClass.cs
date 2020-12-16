@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using ChatBot_Kursach.Exceptions;
 
 
 namespace ChatBot_Kursach.Algorithms
@@ -15,9 +16,9 @@ namespace ChatBot_Kursach.Algorithms
         Question[] InitQuestionList;
      //   Screen current;
         Screen[] screens;
-
+        Screen mistake;
         int Current, trueCurrent;
-        bool m=false;
+        string m;
         bool o=false;
 
         short English;
@@ -29,8 +30,10 @@ namespace ChatBot_Kursach.Algorithms
             screens = new Screen[40];//массив скринов. Последовательность: обязательно вторым[2] должен быть dynamic screen(это тот,
             //где список избранного), 4-6 занимает опросник. 4- вопрос студент или нет, 5- уровень английского, 
             //6 -OpScreen скрин с подобранными универами
-            
+            mistake = new Screen((int)Constants.Images.NULL, "Під час роботи програми виникла помилка, будь ласка, перезапустіть програму, у разі повторення помилки перевстановіть програму", new Question[0]);
             Current = trueCurrent = 0;
+            m = "";
+
 
             WorkWithFiles.XMLFile myxml = new WorkWithFiles.XMLFile("univers");
             myxml.LoadInfo();
@@ -139,17 +142,21 @@ namespace ChatBot_Kursach.Algorithms
                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
                
             });
+
+
         }
+        
+
 
         public String GetText()
         {
-            if (m) return screens[trueCurrent].Text + "\n\nПомилка розпізнавання ключового слова";
+            
             if (o)
             {
                 o = false;
                 return screens[trueCurrent].Text + "\n\nСписок обраного оновлено";
             }
-            return screens[trueCurrent].Text;
+            return screens[trueCurrent].Text + m;
         }
         public int ImagePath { get { return screens[trueCurrent].imagePath; } }
 
@@ -158,75 +165,92 @@ namespace ChatBot_Kursach.Algorithms
         public void CheckKeyWord(string keyword)
         {
 
-            Current = screens[trueCurrent].CheckKeyword(keyword.ToLower());
-            if (Current >= 0) trueCurrent = Current;
-            else
+            try
             {
-                switch (Current) {
-                    case -1:
-                        m = true;
-                        return;
-
-                    case -2:
-                        trueCurrent++;
-                        IsStudent = true;
-                        break;
-                    case -3:
-                        trueCurrent++;
-                        IsStudent = false;
-                        break;
-                    case -4:
-                        trueCurrent++;
-                        English = 1;
-                        ((OpScreen)screens[6]).Set(English,IsStudent);
-
-                        break;
-                    case -5:
-                        trueCurrent++;
-                        English = 2;
-                        ((OpScreen)screens[6]).Set(English, IsStudent);
-                        break;
-                    case -6:
-                        trueCurrent++;
-                        English = 3;
-                        ((OpScreen)screens[6]).Set(English, IsStudent);
-                        break;
-                    case -7:
-                        o = true;
-                        ((DynamicScreen)screens[2]).SetQuestionActive(trueCurrent);
-                        break;
-
-                    default: break;
-                }
-                //  if (keyword == "0" || keyword == "головна") { trueCurrent = 0; return screens[0]; }
-                /*if (Current == -1)
-                {
-                    m = true;
-                    return mistake;
-                }
-                if (Current == -2)
-                {
-                    trueCurrent++;
-                    English = true;
-                }*/
-                
-                
-            }
-            m = false;
+                // throw  new MyException(1);
             
-            // Тут надо try catch
-            /* Current = screens[trueCurrent].CheckKeyword(keyword);
-             if(Current>=0) trueCurrent = Current;
 
-        // else Current = trueCurrent; 
-         if (trueCurrent != -1) return screens[trueCurrent];
-         else if (keyword == "0" || keyword == "головна") { trueCurrent = 0; return screens[0]; }
-         return mistake; // Тут надо try catch*/
+            Current = screens[trueCurrent].CheckKeyword(keyword.ToLower());
+
+                if (Current >= 0)
+                {
+                    trueCurrent = Current;
+                    m = "";
+                }
+                else if (Current == -1) throw new MyException(1);
+                else
+                {
+                    switch (Current)
+                    {
+                        case -2:
+                            trueCurrent++;
+                            IsStudent = true;
+                            break;
+                        case -3:
+                            trueCurrent++;
+                            IsStudent = false;
+                            break;
+                        case -4:
+                            trueCurrent++;
+                            English = 1;
+                            ((OpScreen)screens[6]).Set(English, IsStudent);
+                            break;
+                        case -5:
+                            trueCurrent++;
+                            English = 2;
+                            ((OpScreen)screens[6]).Set(English, IsStudent);
+                            break;
+                        case -6:
+                            trueCurrent++;
+                            English = 3;
+                            ((OpScreen)screens[6]).Set(English, IsStudent);
+                            break;
+                        case -7:
+                            o = true;
+                            ((DynamicScreen)screens[2]).SetQuestionActive(trueCurrent);
+                            break;
+
+                        default: break;
+                    }
+                    //  if (keyword == "0" || keyword == "головна") { trueCurrent = 0; return screens[0]; }
+                    /*if (Current == -1)
+                    {
+                        m = true;
+                        return mistake;
+                    }
+                    if (Current == -2)
+                    {
+                        trueCurrent++;
+                        English = true;
+                    }*/
+
+
+                }
+
+                // Тут надо try catch
+                /* Current = screens[trueCurrent].CheckKeyword(keyword);
+                 if(Current>=0) trueCurrent = Current;
+
+            // else Current = trueCurrent; 
+             if (trueCurrent != -1) return screens[trueCurrent];
+             else if (keyword == "0" || keyword == "головна") { trueCurrent = 0; return screens[0]; }
+             return mistake; // Тут надо try catch*/
+            }
+            catch (MyException ex)
+            {
+                m = "\n\n"+ ex.what;
+
+            }
+            catch (Exception ex)
+            {
+                new MyException(ex);
+
+            }
         }
 
         
 
-        public void ClearFav()
+    public void ClearFav()
         {
             ((DynamicScreen)screens[2]).ClearQuestionActive();
         }
