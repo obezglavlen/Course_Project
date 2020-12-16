@@ -261,5 +261,10 @@ namespace ChatBot_Kursach.MainForm
         {
             WorkWithFiles.JSONFile.SaveInfo("favorites");
         }
+
+        static public void close()
+        {
+            Application.Exit();
+        }
     }
 }
