@@ -256,5 +256,10 @@ namespace ChatBot_Kursach.MainForm
         {
             ResumeLayout();
         }
+
+        private void ChatBot_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            WorkWithFiles.JSONFile.SaveInfo("favorites");
+        }
     }
 }

@@ -34,8 +34,7 @@ namespace ChatBot_Kursach.Algorithms
 
             WorkWithFiles.XMLFile myxml = new WorkWithFiles.XMLFile("univers");
             myxml.LoadInfo();
-
-
+            WorkWithFiles.JSONFile.LoadInfo("favorites");
 
 
             InitQuestionList = new Question[4];

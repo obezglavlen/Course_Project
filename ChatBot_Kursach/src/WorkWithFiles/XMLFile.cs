@@ -45,7 +45,7 @@ namespace ChatBot_Kursach.WorkWithFiles
                         break;
                     case "Madrid":
                         pointer = node.ChildNodes[1];
-                        Constants.__DortmundStr = pointer.InnerText;
+                        Constants.__MadridStr = pointer.InnerText;
                         break;
                     case "Karint":
                         pointer = node.ChildNodes[1];
