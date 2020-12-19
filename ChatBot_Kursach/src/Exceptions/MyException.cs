@@ -20,10 +20,15 @@ namespace ChatBot_Kursach.Exceptions
                                         form1.Close();*/
                     what = "Помилка введення ключового слова";
                     break;
+                case 2:
+                    what = "Невірна індиксація в dynamicscreen";
+                    Console.WriteLine(what,false);
+                    break;
 
                 default:
                     what = "усе погано";
-                    InitAlert(what);
+                    WorkWithFiles.JSONFile.SaveInfo("favorites");
+                    InitAlert(what,true);
                     break;
             }
         }
@@ -32,7 +37,7 @@ namespace ChatBot_Kursach.Exceptions
         {
 
                     what = ex.Message;
-                    InitAlert(what);
+                    InitAlert(what, true);
 
         }
 
@@ -41,9 +46,9 @@ namespace ChatBot_Kursach.Exceptions
 
 
 
-        protected void InitAlert(string message)
+        protected void InitAlert(string message, bool Critical)
         {
-            Alert alert = new Alert(message);            
+            Alert alert = new Alert(message, Critical);            
             alert.ShowDialog();
             
         }

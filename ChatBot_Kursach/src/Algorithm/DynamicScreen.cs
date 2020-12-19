@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ChatBot_Kursach.Exceptions;
 
 namespace ChatBot_Kursach.Algorithms
 {
@@ -43,11 +44,29 @@ namespace ChatBot_Kursach.Algorithms
 
         public bool GetQuestionActive(int q)
         {
-            return IsQuestionActive[q-9];
+            try
+            {
+                if (q >= 10 && q <= 18)
+                    return IsQuestionActive[q - 9];
+                else throw new MyException(2);
+            }
+            catch(MyException ex)
+            {
+                return false;
+            }
         }
         public void SetQuestionActive(int q)
         {
+            try
+            {
+                if (q >= 10 && q <= 18)
             IsQuestionActive[q-9] = !IsQuestionActive[q-9];
+                
+                else throw new MyException(2);
+            }
+            catch (MyException ex)
+            {
+            }
         }
 
         public void ClearQuestionActive()

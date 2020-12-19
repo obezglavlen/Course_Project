@@ -15,15 +15,23 @@ namespace ChatBot_Kursach.Exceptions
             {
                 case 1:
                     what = "У директорії програми не знайдено файлу univers.xml.";
-                    InitAlert(what);
+                    WorkWithFiles.JSONFile.SaveInfo("favorites");
+                    InitAlert(what,true);
                     break;
                 case 2:
                     what = "Файл univers.xml був пошкоджений.";
-                    InitAlert(what);
+                    WorkWithFiles.JSONFile.SaveInfo("favorites");
+                    InitAlert(what,true);
+                    break;
+                case 3:
+                    what = "У директорії програми не знайдено файлу System.Text.Json.";
+                    WorkWithFiles.JSONFile.SaveInfo("favorites");
+                    InitAlert(what, true);
                     break;
                 default:
                     what = "При роботі з файлами виникла помилка.";
-                    InitAlert(what);
+                    WorkWithFiles.JSONFile.SaveInfo("favorites");
+                    InitAlert(what,true);
                     break;
 
             }
@@ -31,7 +39,7 @@ namespace ChatBot_Kursach.Exceptions
         public FileException():base()
         {
             what = "Усе погано.";
-            InitAlert(what);
+            InitAlert(what,true);
         }
 
     }

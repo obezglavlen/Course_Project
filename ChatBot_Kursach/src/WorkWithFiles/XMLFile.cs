@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -9,11 +10,11 @@ using ChatBot_Kursach.Exceptions;
 
 namespace ChatBot_Kursach.WorkWithFiles
 {
-    class XMLFile
+    static class XMLFile
     {
-        private XmlDocument mydoc = new XmlDocument();
-        private XmlElement root;
-        public XMLFile(string docname)
+        static private XmlDocument mydoc = new XmlDocument();
+        static private XmlElement root;
+        public static void LoadInfo(string docname)
         {
 
             try
@@ -23,21 +24,16 @@ namespace ChatBot_Kursach.WorkWithFiles
                 mydoc.Load($"..\\..\\src\\{docname}.xml");
                 root = mydoc.DocumentElement;
             }
-            catch(FileException ex)
+            catch (FileException ex)
             {
 
             }
 
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 new MyException(ex);
             }
 
-            
-
-        }
-        public void LoadInfo()
-        {
             foreach (XmlElement node in root)
             {
                 try
@@ -84,17 +80,19 @@ namespace ChatBot_Kursach.WorkWithFiles
                             break;
                     }
                 }
-                catch(FileException ex)
+                catch (FileException ex)
                 {
-                    
+
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     new MyException(ex);
                 }
-                }
-                
+            }
+
+
+
         }
-        
+
     }
 }

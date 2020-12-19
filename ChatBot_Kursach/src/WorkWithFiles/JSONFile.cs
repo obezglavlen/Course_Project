@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.IO;
+using ChatBot_Kursach.Exceptions;
 
 namespace ChatBot_Kursach.WorkWithFiles
 {
@@ -22,16 +23,28 @@ namespace ChatBot_Kursach.WorkWithFiles
 
         static public void LoadInfo(string filename)
         {
-            jsonString = File.ReadAllText($"..\\..\\src\\{filename}.json");
-            Liked = JsonSerializer.Deserialize<LikedStruct>(jsonString);
-            Constants.Liked = Liked.isliked;
+            try
+            {
+                if (!File.Exists($"..\\..\\src\\{filename}.json")) throw new FileException(3);
+                jsonString = File.ReadAllText($"..\\..\\src\\{filename}.json");
+                Liked = JsonSerializer.Deserialize<LikedStruct>(jsonString);
+                Constants.Liked = Liked.isliked;
+            }
+            catch (FileException ex) { }
         }
 
         static public void SaveInfo(string filename)
         {
-            Liked.isliked = Constants.Liked;
-            jsonString = JsonSerializer.Serialize<LikedStruct>(Liked);
-            File.WriteAllText($"..\\..\\src\\{filename}.json", jsonString);
+            try
+            {
+                Liked.isliked = Constants.Liked;
+                jsonString = JsonSerializer.Serialize<LikedStruct>(Liked);
+                File.WriteAllText($"..\\..\\src\\{filename}.json", jsonString);
+            }
+            catch(Exception ex)
+            {
+                new MyException(ex);
+            }
         }
     }
 }

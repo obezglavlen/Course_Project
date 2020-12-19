@@ -16,7 +16,7 @@ namespace ChatBot_Kursach.Algorithms
         Question[] InitQuestionList;
      //   Screen current;
         Screen[] screens;
-        Screen mistake;
+      //  Screen mistake;
         int Current, trueCurrent;
         string m;
         bool o=false;
@@ -30,13 +30,12 @@ namespace ChatBot_Kursach.Algorithms
             screens = new Screen[40];//массив скринов. Последовательность: обязательно вторым[2] должен быть dynamic screen(это тот,
             //где список избранного), 4-6 занимает опросник. 4- вопрос студент или нет, 5- уровень английского, 
             //6 -OpScreen скрин с подобранными универами
-            mistake = new Screen((int)Constants.Images.NULL, "Під час роботи програми виникла помилка, будь ласка, перезапустіть програму, у разі повторення помилки перевстановіть програму", new Question[0]);
+      //      mistake = new Screen((int)Constants.Images.NULL, "Під час роботи програми виникла помилка, будь ласка, перезапустіть програму, у разі повторення помилки перевстановіть програму", new Question[0]);
             Current = trueCurrent = 0;
             m = "";
 
 
-            WorkWithFiles.XMLFile myxml = new WorkWithFiles.XMLFile("univers");
-            myxml.LoadInfo();
+            WorkWithFiles.XMLFile.LoadInfo("univers");
             WorkWithFiles.JSONFile.LoadInfo("favorites");
 
 
@@ -167,7 +166,7 @@ namespace ChatBot_Kursach.Algorithms
 
             try
             {
-                // throw  new MyException(1);
+             
             
 
             Current = screens[trueCurrent].CheckKeyword(keyword.ToLower());

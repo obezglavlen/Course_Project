@@ -12,17 +12,22 @@ namespace ChatBot_Kursach
 {
     public partial class Alert : Form
     {
-        public Alert(string message)
+        bool critical;
+        public Alert(string message, bool Critical)
         {
             InitializeComponent();
+            critical = Critical;
             this.label2.Text = "під час роботи програми виникла помилка:\n"+message;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-             Application.Exit();
-            System.Environment.Exit(0);
-         //   this.Close();
+            if (critical)
+            {
+                Application.Exit();
+                System.Environment.Exit(0);
+            }
+            this.Close();
 
         }
 
