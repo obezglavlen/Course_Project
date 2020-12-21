@@ -63,6 +63,16 @@ namespace ChatBot_Kursach.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Artesis_Map {
+            get {
+                object obj = ResourceManager.GetObject("Artesis_Map", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Artests_Plantijn {
             get {
                 object obj = ResourceManager.GetObject("Artests_Plantijn", resourceCulture);
@@ -93,6 +103,16 @@ namespace ChatBot_Kursach.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Dortmund_Map {
+            get {
+                object obj = ResourceManager.GetObject("Dortmund_Map", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap heart_disabled {
             get {
                 object obj = ResourceManager.GetObject("heart_disabled", resourceCulture);
@@ -106,6 +126,16 @@ namespace ChatBot_Kursach.Properties {
         internal static System.Drawing.Bitmap heart_enabled {
             get {
                 object obj = ResourceManager.GetObject("heart_enabled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ilmanua_Map {
+            get {
+                object obj = ResourceManager.GetObject("Ilmanua_Map", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +163,39 @@ namespace ChatBot_Kursach.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Karintia_Map {
+            get {
+                object obj = ResourceManager.GetObject("Karintia_Map", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap KULeuven {
             get {
                 object obj = ResourceManager.GetObject("KULeuven", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Leuven_Map {
+            get {
+                object obj = ResourceManager.GetObject("Leuven_Map", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Madrid_Map {
+            get {
+                object obj = ResourceManager.GetObject("Madrid_Map", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,6 +233,16 @@ namespace ChatBot_Kursach.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Thomas_Map {
+            get {
+                object obj = ResourceManager.GetObject("Thomas_Map", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Thomas_More {
             get {
                 object obj = ResourceManager.GetObject("Thomas_More", resourceCulture);
@@ -186,6 +256,16 @@ namespace ChatBot_Kursach.Properties {
         internal static System.Drawing.Bitmap Transilvania {
             get {
                 object obj = ResourceManager.GetObject("Transilvania", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Transilvania_Map {
+            get {
+                object obj = ResourceManager.GetObject("Transilvania_Map", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

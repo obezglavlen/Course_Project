@@ -182,5 +182,29 @@
   <ItemGroup>
     <None Include="Resources\univers.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Artesis_Map.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dortmund_Map.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ilmanua_Map.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Karintia_Map.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Leuven_Map.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Madrid_Map.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Thomas_Map.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Transilvania_Map.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

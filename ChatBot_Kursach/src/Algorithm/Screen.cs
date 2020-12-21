@@ -42,7 +42,7 @@ namespace ChatBot_Kursach.Algorithms
         {
             get
             {
-                TextToReturn = "Бот: \n" + MainText + '\n';
+                TextToReturn = "Бот: \n" + MainText + "\n\n";
                 for (int i = 0; i < questions.Length; i++) TextToReturn += questions[i].text + '\n';
                 return TextToReturn;
             }

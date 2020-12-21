@@ -17,7 +17,7 @@ namespace ChatBot_Kursach
         {
             InitializeComponent();
             critical = Critical;
-            this.label2.Text = "під час роботи програми виникла помилка:\n"+message;
+            this.label2.Text = "Під час роботи програми виникла помилка:\n"+message;
         }
 
         private void button1_Click(object sender, EventArgs e)

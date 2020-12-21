@@ -40,13 +40,13 @@ namespace ChatBot_Kursach.Algorithms
 
 
             InitQuestionList = new Question[4];
-            InitQuestionList[0] = new Question("1. дізнатися, що таке міжнародна академічна мобільність\n", new  Regex("1|академічн|мобільн"), 1);
-            InitQuestionList[1] = new Question("2. переглянути обране\n", new Regex("2|обран"), 2);
-            InitQuestionList[2] = new Question("3. переглянути всі програми академічної мобільності\n", new Regex("3|всі|програм"), 3);
-            InitQuestionList[3] = new Question("4. пройти опитування, та отримати рекомендації щодо програми\n", new  Regex("4|опитуван|прой|рекомендац"), 4);
+            InitQuestionList[0] = new Question("1. дізнатися, що таке міжнародна академічна мобільність", new  Regex("1|академічн|мобільн"), 1);
+            InitQuestionList[1] = new Question("2. переглянути обране", new Regex("2|обран"), 2);
+            InitQuestionList[2] = new Question("3. переглянути всі програми академічної мобільності", new Regex("3|всі|програм"), 3);
+            InitQuestionList[3] = new Question("4. пройти опитування, та отримати рекомендації щодо програми", new  Regex("4|опитуван|прой|рекомендац"), 4);
 
             screens[0] = new Screen((int)Constants.Images.NULL, "Привіт, я — чат-бот помічник по справам академічної мобільності. Я допоможу тобі обрати відповідну програму.\n" +
-                "Спочатку, що ти хочешь введи відповідь, яка позначає те що ти хочешь.\n", InitQuestionList);
+                "Спочатку, введи відповідь, яка позначає те що ти хочешь дізнатися.\nДля вводу використовуй поле внизу. Вводити можна номер варіанту, або ключове слово\n", InitQuestionList);
             screens[1] = new Screen((int)Constants.Images.MADRID, Constants.__About, new Question[] {
                 new Question ("0. Повернення до головного меню", Constants.toMainRegex, 0)
             });
@@ -97,49 +97,96 @@ namespace ChatBot_Kursach.Algorithms
             });
 
             screens[10] = new Screen((int)Constants.Images.LEUVEN, Constants.__LeuvenStr, new Question[] {
-                new Question("1 - Дiзнатися бiльше", new Regex("дiзнатися|бiльше|1"), 0),
+                new Question("1 - Дiзнатися бiльше", new Regex("дiзнатися|бiльше|1"), 20),
                 new Question("2. Додати в обране", new Regex("додат|обран|2"), -7),
                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
 
             });
             screens[11] = new Screen((int)Constants.Images.ILMENAU, Constants.__IlmenauStr, new Question[] {
-                new Question("1 - Дiзнатися бiльше", new Regex("дiзнатися|бiльше|1"), 0),
+                new Question("1 - Дiзнатися бiльше", new Regex("дiзнатися|бiльше|1"), 21),
                 new Question("2. Додати в обране", new Regex("додат|обран|2"), -7),
                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
 
             });
             screens[12] = new Screen((int)Constants.Images.DORTMUND, Constants.__DortmundStr, new Question[] {
-                new Question("1 - Дiзнатися бiльше", new Regex("дiзнатися|бiльше|1"), 0),
+                new Question("1 - Дiзнатися бiльше", new Regex("дiзнатися|бiльше|1"), 22),
                 new Question("2. Додати в обране", new Regex("додат|обран|2"), -7),
                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
                
             });
             screens[13] = new Screen((int)Constants.Images.TRANSILVANIA, Constants.__TransilvaniaStr, new Question[] {
-                new Question("1 - Дiзнатися бiльше", new Regex("дiзнатися|бiльше|1"), 0),
+                new Question("1 - Дiзнатися бiльше", new Regex("дiзнатися|бiльше|1"), 23),
                 new Question("2. Додати в обране", new Regex("додат|обран|2"), -7),
                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
                
             });
             screens[14] = new Screen((int)Constants.Images.KARINT, Constants.__KarintStr, new Question[] {
-                new Question("1 - Дiзнатися бiльше", new Regex("дiзнатися|бiльше|1"), 0),
+                new Question("1 - Дiзнатися бiльше", new Regex("дiзнатися|бiльше|1"), 24),
                  new Question("2. Додати в обране", new Regex("додат|обран|2"), -7),
                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
             });
             screens[15] = new Screen((int)Constants.Images.MADRID, Constants.__MadridStr, new Question[] {
-                new Question("1 - Дiзнатися бiльше", new Regex("дiзнатися|бiльше|1"), 0),
+                new Question("1 - Дiзнатися бiльше", new Regex("дiзнатися|бiльше|1"), 25),
                  new Question("2. Додати в обране", new Regex("додат|обран|2"), -7),
                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
             });
             screens[16] = new Screen((int)Constants.Images.THOMAS, Constants.__ThomasStr, new Question[] {
-                new Question("1 - Дiзнатися бiльше", new Regex("дiзнатися|бiльше|1"), 0),
+                new Question("1 - Дiзнатися бiльше", new Regex("дiзнатися|бiльше|1"), 26),
                  new Question("2. Додати в обране", new Regex("додат|обран|2"), -7),
                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
             });
             screens[17] = new Screen((int)Constants.Images.ARTESIS, Constants.__ArtesisStr, new Question[] {
-                new Question("1 - Дiзнатися бiльше", new Regex("дiзнатися|бiльше|1"), 0),
+                new Question("1 - Дiзнатися бiльше", new Regex("дiзнатися|бiльше|1"), 27),
                  new Question("2. Додати в обране", new Regex("додат|обран|2"), -7),
-                new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
-               
+                new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),             
+            });
+            screens[20] = new Screen((int)Constants.Images.LEUVEN_MAP,
+                "Льовенський університет знаходиться тут. Більше за посиланням https://zp.edu.ua/?q=node/1772",
+                new Question[]
+                {
+                    new Question("0. Повернутися до головного меню", Constants.toMainRegex, 0)
+            });
+            screens[21] = new Screen((int)Constants.Images.ILMENAU_MAP,
+                "Університет Ільменау знаходиться тут. Більше за посиланням https://zp.edu.ua/?q=node/6636",
+                new Question[]
+                {
+                    new Question("0. Повернутися до головного меню", Constants.toMainRegex, 0)
+            });
+            screens[22] = new Screen((int)Constants.Images.DORTMUND_MAP,
+                "Університет Дортмунда знаходиться тут. Більше за посиланням https://zp.edu.ua/?q=node/6649",
+                new Question[]
+                {
+                    new Question("0. Повернутися до головного меню", Constants.toMainRegex, 0)
+            });
+            screens[23] = new Screen((int)Constants.Images.TRANSILVANIA_MAP,
+                "Трансильванський університет знаходиться тут. Більше за посиланням https://zp.edu.ua/?q=node/7285",
+                new Question[]
+                {
+                    new Question("0. Повернутися до головного меню", Constants.toMainRegex, 0)
+            });
+            screens[24] = new Screen((int)Constants.Images.KARINT_MAP,
+                "Каринтський університет знаходиться тут. Більше за посиланням https://zp.edu.ua/?q=node/7284",
+                new Question[]
+                {
+                    new Question("0. Повернутися до головного меню", Constants.toMainRegex, 0)
+            });
+            screens[25] = new Screen((int)Constants.Images.MADRID_MAP,
+                "Льовенський університет знаходиться тут. Більше за посиланням https://zp.edu.ua/?q=node/7330",
+                new Question[]
+                {
+                    new Question("0. Повернутися до головного меню", Constants.toMainRegex, 0)
+            });
+            screens[26] = new Screen((int)Constants.Images.THOMAS_MAP,
+                "Університетський колледж Thomas More знаходиться тут. Більше за посиланням https://zp.edu.ua/?q=node/7331",
+                new Question[]
+                {
+                    new Question("0. Повернутися до головного меню", Constants.toMainRegex, 0)
+            });
+            screens[27] = new Screen((int)Constants.Images.ARTESIS_MAP,
+                "Університетський коледж Artesis Plantijn знаходиться тут. Більше за посиланням https://zp.edu.ua/?q=node/8175",
+                new Question[]
+                {
+                    new Question("0. Повернутися до головного меню", Constants.toMainRegex, 0)
             });
 
 
@@ -211,29 +258,7 @@ namespace ChatBot_Kursach.Algorithms
 
                         default: break;
                     }
-                    //  if (keyword == "0" || keyword == "головна") { trueCurrent = 0; return screens[0]; }
-                    /*if (Current == -1)
-                    {
-                        m = true;
-                        return mistake;
-                    }
-                    if (Current == -2)
-                    {
-                        trueCurrent++;
-                        English = true;
-                    }*/
-
-
                 }
-
-                // Тут надо try catch
-                /* Current = screens[trueCurrent].CheckKeyword(keyword);
-                 if(Current>=0) trueCurrent = Current;
-
-            // else Current = trueCurrent; 
-             if (trueCurrent != -1) return screens[trueCurrent];
-             else if (keyword == "0" || keyword == "головна") { trueCurrent = 0; return screens[0]; }
-             return mistake; // Тут надо try catch*/
             }
             catch (MyException ex)
             {
@@ -253,7 +278,5 @@ namespace ChatBot_Kursach.Algorithms
         {
             ((DynamicScreen)screens[2]).ClearQuestionActive();
         }
-       // public bool IsButtonLiked { get { return ((DynamicScreen)screens[2]).GetQuestionActive(trueCurrent - 9); } }
-
     }
 }

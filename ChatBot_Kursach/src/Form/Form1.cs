@@ -151,6 +151,64 @@ namespace ChatBot_Kursach.MainForm
                         pic.Image = Properties.Resources.Transilvania;
                         break;
                     }
+                case (int)Constants.Images.TRANSILVANIA_MAP:
+                    {
+                        lab.Top += 150;
+                        pic.Height = lab.Top - 10;
+                        pic.Image = Properties.Resources.Transilvania_Map;
+                        break;
+                    }
+                ////
+                case (int)Constants.Images.THOMAS_MAP:
+                    {
+                        lab.Top += 150;
+                        pic.Height = lab.Top - 10;
+                        pic.Image = Properties.Resources.Thomas_Map;
+                        break;
+                    }
+                case (int)Constants.Images.MADRID_MAP:
+                    {
+                        lab.Top += 150;
+                        pic.Height = lab.Top - 10;
+                        pic.Image = Properties.Resources.Madrid_Map;
+                        break;
+                    }
+                case (int)Constants.Images.KARINT_MAP:
+                    {
+                        lab.Top += 150;
+                        pic.Height = lab.Top - 10;
+                        pic.Image = Properties.Resources.Karintia_Map;
+                        break;
+                    }
+                case (int)Constants.Images.ILMENAU_MAP:
+                    {
+                        lab.Top += 150;
+                        pic.Height = lab.Top - 10;
+                        pic.Image = Properties.Resources.Ilmanua_Map;
+                        break;
+                    }
+                case (int)Constants.Images.LEUVEN_MAP:
+                    {
+                        lab.Top += 150;
+                        pic.Height = lab.Top - 10;
+                        pic.Image = Properties.Resources.Leuven_Map;
+                        break;
+                    }
+                case (int)Constants.Images.DORTMUND_MAP:
+                    {
+                        lab.Top += 150;
+                        pic.Height = lab.Top - 10;
+                        pic.Image = Properties.Resources.Dortmund_Map;
+                        break;
+                    }
+                case (int)Constants.Images.ARTESIS_MAP:
+                    {
+                        lab.Top += 150;
+                        pic.Height = lab.Top - 10;
+                        pic.Image = Properties.Resources.Artesis_Map;
+                        break;
+                    }
+                ////
                 default:
                     {
                         lab.Top = 5;

@@ -22,7 +22,15 @@ namespace ChatBot_Kursach
             KARINT,
             ARTESIS,
             THOMAS,
-            TRANSILVANIA
+            TRANSILVANIA,
+            LEUVEN_MAP,
+            ILMENAU_MAP,
+            DORTMUND_MAP,
+            MADRID_MAP,
+            KARINT_MAP,
+            ARTESIS_MAP,
+            THOMAS_MAP,
+            TRANSILVANIA_MAP
         }
 
         public static Regex toMainRegex = new Regex("0|головне|меню|повернутися");

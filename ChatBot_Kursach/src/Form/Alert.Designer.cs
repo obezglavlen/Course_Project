@@ -36,10 +36,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(206, 126);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(156, 93);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
+            this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
@@ -48,36 +47,31 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 1);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.MaximumSize = new System.Drawing.Size(295, 0);
+            this.label2.Location = new System.Drawing.Point(3, 1);
+            this.label2.MaximumSize = new System.Drawing.Size(221, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(257, 51);
+            this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 0;
-            this.label2.Text = "";
             // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.linkLabel1);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(13, 23);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(10, 19);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(293, 83);
+            this.panel2.Size = new System.Drawing.Size(221, 68);
             this.panel2.TabIndex = 3;
             // 
             // Alert
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(325, 281);
+            this.ClientSize = new System.Drawing.Size(245, 124);
             this.ControlBox = false;
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MaximumSize = new System.Drawing.Size(343, 328);
-            this.MinimumSize = new System.Drawing.Size(343, 328);
+            this.MaximumSize = new System.Drawing.Size(261, 163);
+            this.MinimumSize = new System.Drawing.Size(261, 163);
             this.Name = "Alert";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "About";

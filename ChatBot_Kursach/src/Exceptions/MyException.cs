@@ -21,7 +21,7 @@ namespace ChatBot_Kursach.Exceptions
                     what = "Помилка введення ключового слова";
                     break;
                 case 2:
-                    what = "Невірна індиксація в dynamicscreen";
+                    what = "Невірна індексація в dynamicscreen";
                     Console.WriteLine(what,false);
                     break;
 
@@ -49,8 +49,7 @@ namespace ChatBot_Kursach.Exceptions
         protected void InitAlert(string message, bool Critical)
         {
             Alert alert = new Alert(message, Critical);            
-            alert.ShowDialog();
-            
+            alert.ShowDialog();         
         }
     }
 }
