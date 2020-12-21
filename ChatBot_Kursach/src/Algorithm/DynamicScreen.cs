@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ChatBot_Kursach.Exceptions;
 
 namespace ChatBot_Kursach.Algorithms
 {
@@ -11,37 +12,79 @@ namespace ChatBot_Kursach.Algorithms
     {
         protected bool[] IsQuestionActive;
 
-        public DynamicScreen(string imgPath, string mainText, Question[] Questions) : base()
+        public DynamicScreen(int imgPath, string mainText, Question[] Questions) : base()
         {
             ImagePath = imgPath;
             MainText = mainText;
             questions = Questions;
-            IsQuestionActive = Enumerable.Repeat(false, questions.Length).ToArray();           
+            //IsQuestionActive = Enumerable.Repeat(false, 10).ToArray();
+            IsQuestionActive = Constants.Liked;
+
+
         }
 
         public DynamicScreen() : base()
         {
+            ImagePath = (int)Constants.Images.ROBOT;
+            MainText = "";
+
+        }
+
+        public override int CheckKeyword(string keyword)
+        {
+            for (int i = 0; i < questions.Length; i++)
+            {
+                if(IsQuestionActive[i])
+                if (questions[i].CheckKeyword(keyword) == true)
+                    return questions[i].NextScreen;
+            }
+            return -1;
 
         }
 
         public bool GetQuestionActive(int q)
         {
-
-            return IsQuestionActive[q];
+            try
+            {
+                if (q >= 10 && q <= 18)
+                    return IsQuestionActive[q - 9];
+                else throw new MyException(2);
+            }
+            catch(MyException ex)
+            {
+                return false;
+            }
         }
-        public bool SetQuestionActive(int q)
+        public void SetQuestionActive(int q)
         {
-            IsQuestionActive[q] = !IsQuestionActive[q];
-            return IsQuestionActive[q];
-
+            try
+            {
+                if (q >= 10 && q <= 18)
+            IsQuestionActive[q-9] = !IsQuestionActive[q-9];
+                
+                else throw new MyException(2);
+            }
+            catch (MyException ex)
+            {
+            }
         }
 
-        public override string GetText()
+        public void ClearQuestionActive()
         {
-            TextToReturn = MainText + "\n";
+            Constants.Liked = Enumerable.Repeat(false, 10).ToArray();
+            Constants.Liked[0] = true;
+            IsQuestionActive = Constants.Liked;
+        }
+        public override string Text
+        {
+            get
+            {
+                TextToReturn = MainText + "\n";
 
-            for (int i = 0; i < questions.Length; i++) if (IsQuestionActive[i]) TextToReturn += "\n" + questions[i].text;
-            return TextToReturn;
+                for (int i = 0; i < questions.Length; i++) if (IsQuestionActive[i]) TextToReturn += "\n" + questions[i].text;
+                return TextToReturn;
+            }
+            
         }
     }
 }
