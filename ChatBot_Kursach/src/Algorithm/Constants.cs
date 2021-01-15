@@ -33,7 +33,7 @@ namespace ChatBot_Kursach
             TRANSILVANIA_MAP
         }
 
-        public static Regex toMainRegex = new Regex("0|головне|меню|повернутися");
+        public static Regex toMainRegex = new Regex("0|головне|меню|повернутися|назад");
 
         public static string __LeuvenStr = "";
         public static string __IlmenauStr = "";
