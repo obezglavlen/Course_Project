@@ -51,10 +51,7 @@ namespace ChatBot_Kursach.Algorithms
     }
 
 
-    public class QScreen : Screen
-    {
 
-    }
 
 
 

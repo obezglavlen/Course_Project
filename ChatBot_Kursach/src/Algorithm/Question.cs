@@ -12,14 +12,13 @@ namespace ChatBot_Kursach.Algorithms
     public struct Question
     {
         public string text;
-     //   public string[] keywords;
         Regex regex;
         public int NextScreen;
 
         public Question(string t, Regex ans, int next)
         {
             text = t;
-          //  keywords = ans;
+
             NextScreen = next;
             regex = ans;
         }
@@ -29,12 +28,7 @@ namespace ChatBot_Kursach.Algorithms
             MatchCollection matches = regex.Matches(keyword);
             if (matches.Count >= 1) return true;
             return false;
-            /*for (int i = 0; i < keywords.Length; i++)
-            {
-                if (keyword == keywords[i]) return true;
 
-            }
-            return false;*/
         }
 
     }
