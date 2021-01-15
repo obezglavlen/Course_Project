@@ -17,7 +17,7 @@ namespace ChatBot_Kursach.Algorithms
             ImagePath = imgPath;
             MainText = mainText;
             questions = Questions;
-            //IsQuestionActive = Enumerable.Repeat(false, 10).ToArray();
+
             IsQuestionActive = Constants.Liked;
 
 

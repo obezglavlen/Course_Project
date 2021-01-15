@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using ChatBot_Kursach.Exceptions;
 
 
@@ -14,9 +10,7 @@ namespace ChatBot_Kursach.Algorithms
 
 
         Question[] InitQuestionList;
-     //   Screen current;
         Screen[] screens;
-      //  Screen mistake;
         int Current, trueCurrent;
         string m;
         bool o=false;
@@ -27,14 +21,9 @@ namespace ChatBot_Kursach.Algorithms
 
         public MainClass()
         {
-            screens = new Screen[40];//массив скринов. Последовательность: обязательно вторым[2] должен быть dynamic screen(это тот,
-            //где список избранного), 4-6 занимает опросник. 4- вопрос студент или нет, 5- уровень английского, 
-            //6 -OpScreen скрин с подобранными универами
-      //      mistake = new Screen((int)Constants.Images.NULL, "Під час роботи програми виникла помилка, будь ласка, перезапустіть програму, у разі повторення помилки перевстановіть програму", new Question[0]);
+            screens = new Screen[28];
             Current = trueCurrent = 0;
             m = "";
-
-
             WorkWithFiles.XMLFile.LoadInfo("univers");
             WorkWithFiles.JSONFile.LoadInfo("favorites");
 
@@ -97,46 +86,46 @@ namespace ChatBot_Kursach.Algorithms
             });
 
             screens[10] = new Screen((int)Constants.Images.LEUVEN, Constants.__LeuvenStr, new Question[] {
-                new Question("1 - Дiзнатися бiльше", new Regex("дізнатис|бiльше|1"), 20),
+                new Question("1 - Дiзнатися бiльше", new Regex("дізнатис|більше|1"), 20),
                 new Question("2. Додати в обране", new Regex("додат|обран|2"), -7),
                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
 
             });
             screens[11] = new Screen((int)Constants.Images.ILMENAU, Constants.__IlmenauStr, new Question[] {
-                new Question("1 - Дiзнатися бiльше", new Regex("дізнатис|бiльше|1"), 21),
+                new Question("1 - Дiзнатися бiльше", new Regex("дізнатис|більше|1"), 21),
                 new Question("2. Додати в обране", new Regex("додат|обран|2"), -7),
                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
 
             });
             screens[12] = new Screen((int)Constants.Images.DORTMUND, Constants.__DortmundStr, new Question[] {
-                new Question("1 - Дiзнатися бiльше", new Regex("дізнатис|бiльше|1"), 22),
+                new Question("1 - Дiзнатися бiльше", new Regex("дізнатис|більше|1"), 22),
                 new Question("2. Додати в обране", new Regex("додат|обран|2"), -7),
                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
                
             });
             screens[13] = new Screen((int)Constants.Images.TRANSILVANIA, Constants.__TransilvaniaStr, new Question[] {
-                new Question("1 - Дiзнатися бiльше", new Regex("дізнатис|бiльше|1"), 23),
+                new Question("1 - Дiзнатися бiльше", new Regex("дізнатис|більше|1"), 23),
                 new Question("2. Додати в обране", new Regex("додат|обран|2"), -7),
                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
                
             });
             screens[14] = new Screen((int)Constants.Images.KARINT, Constants.__KarintStr, new Question[] {
-                new Question("1 - Дiзнатися бiльше", new Regex("дізнатис|бiльше|1"), 24),
+                new Question("1 - Дiзнатися бiльше", new Regex("дізнатис|більше|1"), 24),
                  new Question("2. Додати в обране", new Regex("додат|обран|2"), -7),
                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
             });
             screens[15] = new Screen((int)Constants.Images.MADRID, Constants.__MadridStr, new Question[] {
-                new Question("1 - Дiзнатися бiльше", new Regex("дізнатис|бiльше|1"), 25),
+                new Question("1 - Дiзнатися бiльше", new Regex("дізнатис|більше|1"), 25),
                  new Question("2. Додати в обране", new Regex("додат|обран|2"), -7),
                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
             });
             screens[16] = new Screen((int)Constants.Images.THOMAS, Constants.__ThomasStr, new Question[] {
-                new Question("1 - Дiзнатися бiльше", new Regex("дізнатис|бiльше|1"), 26),
+                new Question("1 - Дiзнатися бiльше", new Regex("дізнатис|більше|1"), 26),
                  new Question("2. Додати в обране", new Regex("додат|обран|2"), -7),
                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
             });
             screens[17] = new Screen((int)Constants.Images.ARTESIS, Constants.__ArtesisStr, new Question[] {
-                new Question("1 - Дiзнатися бiльше", new Regex("дізнатис|бiльше|1"), 27),
+                new Question("1 - Дiзнатися бiльше", new Regex("дізнатис|більше|1"), 27),
                  new Question("2. Додати в обране", new Regex("додат|обран|2"), -7),
                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),             
             });
