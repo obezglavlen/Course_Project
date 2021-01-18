@@ -320,5 +320,9 @@ namespace ChatBot_Kursach.MainForm
             WorkWithFiles.JSONFile.SaveInfo("favorites");
         }
 
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

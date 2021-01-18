@@ -24,6 +24,8 @@ namespace ChatBot_Kursach.Exceptions
                     InitAlert(what,true);
                     break;
                 case 3:
+                    Constants.Liked = Enumerable.Repeat(false, 10).ToArray();
+                    Constants.Liked[0] = true;
                     what = "У директорії програми не знайдено файлу System.Text.Json.";
                     WorkWithFiles.JSONFile.SaveInfo("favorites");
                     InitAlert(what, true);
