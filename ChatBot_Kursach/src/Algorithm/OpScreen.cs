@@ -26,16 +26,16 @@ namespace ChatBot_Kursach.Algorithms
             //1:льовен, 2: Ыльмен, 3: Дортмунд, 4:Брашов, 5: Каринтій, 6: Мадрид, 7:Бельгія, 8:Антверпень, 9:
             if (IsStudent)
             {
-                if (English == 1)
-                {
+                
+                
                     IsQuestionActive[1] = true;
                     IsQuestionActive[4] = true;
                     IsQuestionActive[5] = true;
                     IsQuestionActive[6] = true;
                     IsQuestionActive[8] = true;
                     IsQuestionActive[7] = true;
-                }
-                else
+
+                if (English > 1)
                 {
                     IsQuestionActive[3] = true;
                     IsQuestionActive[2] = true;
@@ -43,8 +43,7 @@ namespace ChatBot_Kursach.Algorithms
 
             }
             else if (English == 3) IsQuestionActive[2] = true;
-            else
-            {
+            
                 IsQuestionActive[7] = true;
                 IsQuestionActive[3] = true;
                 IsQuestionActive[8] = true;
@@ -52,7 +51,7 @@ namespace ChatBot_Kursach.Algorithms
                 IsQuestionActive[5] = true;
                 IsQuestionActive[1] = true;
 
-            }
+            
 
             return true;
         }

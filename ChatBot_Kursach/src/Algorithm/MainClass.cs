@@ -42,10 +42,10 @@ namespace ChatBot_Kursach.Algorithms
             screens[2] = new DynamicScreen((int)Constants.Images.NULL, "Список обраних програм:\n", new Question[] {
                                 new Question("0. Повернення до головного меню", Constants.toMainRegex, 0),
                 new Question("1. Льовен", new Regex("1|льовен"), 10),
-                new Question("2. Ільменау", new Regex("2|ільменау"), 11),
+                new Question("2. Ільменау", new Regex("2|ільмен"), 11),
                 new Question("3. Дортмунд", new Regex("3|дортмунд"), 12),
-                new Question("4. Трансильванiя", new Regex("4|трансильванiя"), 13),
-                new Question("5. Каринтій ", new Regex("5|каринтій"), 14),
+                new Question("4. Трансильванiя", new Regex("4|трансильван"), 13),
+                new Question("5. Каринтій ", new Regex("5|каринт"), 14),
                 new Question("6. Мадрид", new Regex("6|мадрид"), 15),
                 new Question("7. Thomas More", new Regex("7|томас|thomas|more"), 16),
                 new Question("8. Артесiс ", new Regex("8|артесiс"), 17)

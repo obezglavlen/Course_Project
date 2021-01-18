@@ -32,8 +32,7 @@ namespace ChatBot_Kursach.WorkWithFiles
             }
             catch (FileException ex)
             {
-                Constants.Liked = Enumerable.Repeat(false, 9).ToArray();
-                Constants.Liked[0] = true;
+                
             }
         }
 
