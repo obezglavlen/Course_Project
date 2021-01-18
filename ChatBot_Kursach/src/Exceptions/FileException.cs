@@ -26,7 +26,7 @@ namespace ChatBot_Kursach.Exceptions
                 case 3:
                     Constants.Liked = Enumerable.Repeat(false, 10).ToArray();
                     Constants.Liked[0] = true;
-                    what = "У директорії програми не знайдено файлу System.Text.Json.";
+                    what = "У директорії програми не знайдено файлу favorites.json, тому він був відновлений.";
                     WorkWithFiles.JSONFile.SaveInfo("favorites");
                     InitAlert(what, true);
                     break;
