@@ -20,8 +20,8 @@ namespace ChatBot_Kursach.WorkWithFiles
             try
             {
 
-                if (!File.Exists($"..\\..\\src\\{docname}.xml")) throw new FileException(1);
-                mydoc.Load($"..\\..\\src\\{docname}.xml");
+                if (!File.Exists($".\\{docname}.xml")) throw new FileException(1);
+                mydoc.Load($".\\{docname}.xml");
                 root = mydoc.DocumentElement;
             }
             catch (FileException ex)

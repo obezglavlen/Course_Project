@@ -25,8 +25,8 @@ namespace ChatBot_Kursach.WorkWithFiles
         {
             try
             {
-                if (!File.Exists($"..\\..\\src\\{filename}.json")) throw new FileException(3);
-                jsonString = File.ReadAllText($"..\\..\\src\\{filename}.json");
+                if (!File.Exists($".\\{filename}.json")) throw new FileException(3);
+                jsonString = File.ReadAllText($".\\{filename}.json");
                 Liked = JsonSerializer.Deserialize<LikedStruct>(jsonString);
                 Constants.Liked = Liked.isliked;
             }
@@ -42,7 +42,7 @@ namespace ChatBot_Kursach.WorkWithFiles
             {
                 Liked.isliked = Constants.Liked;
                 jsonString = JsonSerializer.Serialize<LikedStruct>(Liked);
-                File.WriteAllText($"..\\..\\src\\{filename}.json", jsonString);
+                File.WriteAllText($".\\{filename}.json", jsonString);
             }
             catch(Exception ex)
             {
