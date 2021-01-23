@@ -1,11 +1,6 @@
-﻿using ChatBot_Kursach.Properties;
+﻿
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 using ChatBot_Kursach.Algorithms;
 
@@ -88,13 +83,7 @@ namespace ChatBot_Kursach.MainForm
                         break;
 
                     }
-                case (int)Constants.Images.HEART:
-                    {
-                        lab.Top += 150;
-                        pic.Height = lab.Top - 10;
-                        pic.Image = Properties.Resources.heart_disabled;
-                        break;
-                    }
+
                 case (int)Constants.Images.LEUVEN:
                     {
                         lab.Top += 150;
