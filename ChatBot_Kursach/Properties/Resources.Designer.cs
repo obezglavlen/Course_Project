@@ -113,26 +113,6 @@ namespace ChatBot_Kursach.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap heart_disabled {
-            get {
-                object obj = ResourceManager.GetObject("heart_disabled", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap heart_enabled {
-            get {
-                object obj = ResourceManager.GetObject("heart_enabled", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Ilmanua_Map {
             get {
                 object obj = ResourceManager.GetObject("Ilmanua_Map", resourceCulture);
